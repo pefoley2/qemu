@@ -1,0 +1,10 @@
+[project]
+project_name = 'qemu'
+build_system = 'bazel'
+
+[[config]]
+config_name = 'qemu_config'
+
+[config.platforms]
+build_platforms = ["native"]
+host_platforms = ["native"]

@@ -1,0 +1,12 @@
+[shared_libraries]
+'glib-2.0' = [{}]
+zlib = [{}]
+[programs]
+diff = { version = "1" }
+env = { version = "1" }
+'scripts/make-config-poison.sh' = { version = "1" }
+'scripts/qemu-version.sh' = { version = "1" }
+'scripts/hxtool' = { version = "1" }
+'initrd-stress.sh' = { version = "1" }
+'/usr/bin/sphinx-build' = { version = "1" }
+'/usr/local/google/home/pefoley/qemu/build/pyvenv/bin/python3' = { version = "1" }
