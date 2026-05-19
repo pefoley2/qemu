@@ -1,0 +1,21 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "qemuutil_fg_8",
+    srcs = [
+        "hvf-stub.c",
+        "kvm-stub.c",
+        "mshv-stub.c",
+        "nitro-stub.c",
+        "nvmm-stub.c",
+        "tcg-stub.c",
+        "whpx-stub.c",
+        "xen-stub.c",
+    ],
+)

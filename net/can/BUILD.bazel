@@ -1,0 +1,16 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "system_fg_78",
+    srcs = [
+        "can_core.c",
+        "can_host.c",
+        "can_socketcan.c",
+    ],
+)

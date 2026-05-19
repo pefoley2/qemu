@@ -1,0 +1,29 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_59",
+    srcs = [
+        "lu.c",
+        "ufs.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__69",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_ufs",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

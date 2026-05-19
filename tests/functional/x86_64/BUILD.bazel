@@ -1,0 +1,175 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "test_acpi_bits_py",
+    srcs = [
+        "test_acpi_bits.py",
+    ],
+)
+
+filegroup(
+    name = "test_bad_vmstate_py",
+    srcs = [
+        "test_bad_vmstate.py",
+    ],
+)
+
+filegroup(
+    name = "test_cpu_model_versions_py",
+    srcs = [
+        "test_cpu_model_versions.py",
+    ],
+)
+
+filegroup(
+    name = "test_cpu_queries_py",
+    srcs = [
+        "test_cpu_queries.py",
+    ],
+)
+
+filegroup(
+    name = "test_hotplug_blk_py",
+    srcs = [
+        "test_hotplug_blk.py",
+    ],
+)
+
+filegroup(
+    name = "test_hotplug_cpu_py",
+    srcs = [
+        "test_hotplug_cpu.py",
+    ],
+)
+
+filegroup(
+    name = "test_intel_iommu_py",
+    srcs = [
+        "test_intel_iommu.py",
+    ],
+)
+
+filegroup(
+    name = "test_kvm_xen_py",
+    srcs = [
+        "test_kvm_xen.py",
+    ],
+)
+
+filegroup(
+    name = "test_linux_initrd_py",
+    srcs = [
+        "test_linux_initrd.py",
+    ],
+)
+
+filegroup(
+    name = "test_mem_addr_space_py",
+    srcs = [
+        "test_mem_addr_space.py",
+    ],
+)
+
+filegroup(
+    name = "test_memlock_py",
+    srcs = [
+        "test_memlock.py",
+    ],
+)
+
+filegroup(
+    name = "test_migration_py",
+    srcs = [
+        "test_migration.py",
+    ],
+)
+
+filegroup(
+    name = "test_multiprocess_py",
+    srcs = [
+        "test_multiprocess.py",
+    ],
+)
+
+filegroup(
+    name = "test_netdev_ethtool_py",
+    srcs = [
+        "test_netdev_ethtool.py",
+    ],
+)
+
+filegroup(
+    name = "test_pc_cpu_hotplug_props_py",
+    srcs = [
+        "test_pc_cpu_hotplug_props.py",
+    ],
+)
+
+filegroup(
+    name = "test_rebuild_vmfd_py",
+    srcs = [
+        "test_rebuild_vmfd.py",
+    ],
+)
+
+filegroup(
+    name = "test_replay_py",
+    srcs = [
+        "test_replay.py",
+    ],
+)
+
+filegroup(
+    name = "test_reverse_debug_py",
+    srcs = [
+        "test_reverse_debug.py",
+    ],
+)
+
+filegroup(
+    name = "test_tuxrun_py",
+    srcs = [
+        "test_tuxrun.py",
+    ],
+)
+
+filegroup(
+    name = "test_vfio_user_client_py",
+    srcs = [
+        "test_vfio_user_client.py",
+    ],
+)
+
+filegroup(
+    name = "test_vhost_user_bridge_py",
+    srcs = [
+        "test_vhost_user_bridge.py",
+    ],
+)
+
+filegroup(
+    name = "test_virtio_balloon_py",
+    srcs = [
+        "test_virtio_balloon.py",
+    ],
+)
+
+filegroup(
+    name = "test_virtio_gpu_py",
+    srcs = [
+        "test_virtio_gpu.py",
+    ],
+)
+
+filegroup(
+    name = "test_virtio_version_py",
+    srcs = [
+        "test_virtio_version.py",
+    ],
+)

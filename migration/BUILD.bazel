@@ -1,0 +1,71 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "migration_files",
+    srcs = [
+        "migration-stats.c",
+        "page_cache.c",
+        "qemu-file.c",
+        "vmstate-types.c",
+        "vmstate.c",
+        "xbzrle.c",
+        "yank_functions.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_75",
+    srcs = [
+        "block-active.c",
+        "block-dirty-bitmap.c",
+        "channel-block.c",
+        "channel.c",
+        "colo-failover.c",
+        "colo.c",
+        "cpr-exec.c",
+        "cpr-transfer.c",
+        "cpr.c",
+        "cpu-throttle.c",
+        "dirtyrate.c",
+        "exec.c",
+        "fd.c",
+        "file.c",
+        "global_state.c",
+        "migration-hmp-cmds.c",
+        "migration.c",
+        "multifd-colo.c",
+        "multifd-device-state.c",
+        "multifd-nocomp.c",
+        "multifd-zero-page.c",
+        "multifd-zlib.c",
+        "multifd.c",
+        "options.c",
+        "postcopy-ram.c",
+        "ram.c",
+        "savevm.c",
+        "socket.c",
+        "tls.c",
+        "vfio-stub.c",
+        "vfio.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__78",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_migration",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,73 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_39",
+    srcs = [
+        "allwinner-sun8i-emac.c",
+        "allwinner_emac.c",
+        "cadence_gem.c",
+        "dp8393x.c",
+        "e1000.c",
+        "e1000e.c",
+        "e1000e_core.c",
+        "e1000x_common.c",
+        "eepro100.c",
+        "ftgmac100.c",
+        "i82596.c",
+        "igb.c",
+        "igb_core.c",
+        "igbvf.c",
+        "imx_fec.c",
+        "lan9118.c",
+        "lan9118_phy.c",
+        "lance.c",
+        "lasi_i82596.c",
+        "mcf_fec.c",
+        "msf2-emac.c",
+        "mv88w8618_eth.c",
+        "ne2000-isa.c",
+        "ne2000-pci.c",
+        "ne2000.c",
+        "net_rx_pkt.c",
+        "net_tx_pkt.c",
+        "npcm7xx_emc.c",
+        "npcm_gmac.c",
+        "npcm_pcs.c",
+        "opencores_eth.c",
+        "pcnet-pci.c",
+        "pcnet.c",
+        "rtl8139.c",
+        "smc91c111.c",
+        "stellaris_enet.c",
+        "sungem.c",
+        "sunhme.c",
+        "tulip.c",
+        "vhost_net-stub.c",
+        "vhost_net.c",
+        "virtio-net.c",
+        "vmxnet3.c",
+        "xen_nic.c",
+        "xilinx_axienet.c",
+        "xilinx_ethlite.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__47",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_net",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

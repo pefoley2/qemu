@@ -1,0 +1,112 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_genrule")
+
+filegroup(
+    name = "qapi-schema-test_json",
+    srcs = [
+        "qapi-schema-test.json",
+    ],
+)
+
+filegroup(
+    name = "sub-sub-module_json",
+    srcs = [
+        "sub-sub-module.json",
+    ],
+)
+
+meson_genrule(
+    name = "QAPI doc",
+    outs = [
+        "doc-good-qapi-commands.c",
+        "doc-good-qapi-commands.h",
+        "doc-good-qapi-emit-events.c",
+        "doc-good-qapi-emit-events.h",
+        "doc-good-qapi-events.c",
+        "doc-good-qapi-events.h",
+        "doc-good-qapi-init-commands.c",
+        "doc-good-qapi-init-commands.h",
+        "doc-good-qapi-introspect.c",
+        "doc-good-qapi-introspect.h",
+        "doc-good-qapi-types.c",
+        "doc-good-qapi-types.h",
+        "doc-good-qapi-visit.c",
+        "doc-good-qapi-visit.h",
+    ],
+    srcs = [
+        "//scripts/qapi:__init___py",
+        "//scripts/qapi:backend_py",
+        "//scripts/qapi:commands_py",
+        "//scripts/qapi:common_py",
+        "//scripts/qapi:error_py",
+        "//scripts/qapi:events_py",
+        "//scripts/qapi:expr_py",
+        "//scripts/qapi:features_py",
+        "//scripts/qapi:gen_py",
+        "//scripts/qapi:introspect_py",
+        "//scripts/qapi:main_py",
+        "//scripts/qapi:parser_py",
+        "//scripts/qapi:schema_py",
+        "//scripts/qapi:source_py",
+        "//scripts/qapi:types_py",
+        "//scripts/qapi:visit_py",
+        "//scripts:qapi-gen_py",
+        "doc-good.json",
+    ],
+    tools = [
+        "//scripts:qapi-py_binary",
+    ],
+    export_include_dirs = [
+        "tests",
+        "tests/qapi-schema",
+    ],
+    cmd = "$(location //scripts:qapi-py_binary) -o $(GENDIR) -p doc-good- $(location doc-good.json)",
+)
+
+meson_genrule(
+    name = "QAPI rST doc",
+    outs = [
+        "doc-good.txt",
+    ],
+    srcs = [
+        "//../../../../../bin:env_",
+        "//../../../../../bin:sphinx-build_",
+        "doc-good.json",
+        "doc-good.rst",
+    ],
+    tools = [
+        "//:/usr/bin/sphinx-build",
+        "//:env",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/qapi-schema && mkdir -p $(GENDIR)/../../../../../bin && cp $(location doc-good.json) $(GENDIR)/tests/qapi-schema && cp $(location doc-good.rst) $(GENDIR)/tests/qapi-schema && cp $(location //../../../../../bin:env_) $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:sphinx-build_) $(GENDIR)/../../../../../bin && $(location //:env) CONFDIR=etc/qemu $(location //:/usr/bin/sphinx-build) -q -j auto -Dversion=11.0.50 -Drelease= -b text -E -c $(GENDIR)/docs -D master_doc=doc-good -Ddepfile=docs.d -Ddepfile_stamp=doc-good.stamp $(GENDIR)/tests/qapi-schema $(GENDIR)",
+)
+
+meson_genrule(
+    name = "QAPI rST doc newline-sanitized",
+    outs = [
+        "doc-good.txt.nocr",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    cmd = "-c 'import sys;[sys.stdout.write(line.replace(chr(13), "")) for line in sys.stdin]' > $(location doc-good.txt.nocr)",
+)
+
+meson_genrule(
+    name = "QAPI rST doc reference newline-sanitized",
+    outs = [
+        "doc-good.ref.nocr",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "doc-good.txt",
+    ],
+    cmd = "-c 'import sys;[sys.stdout.write(line.replace(chr(13), "")) for line in sys.stdin]' > $(location doc-good.ref.nocr)",
+)

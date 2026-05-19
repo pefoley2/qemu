@@ -1,0 +1,61 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_9",
+    srcs = [
+        "cpu-exec-common.c",
+        "cpu-exec.c",
+        "cputlb.c",
+        "icount-common.c",
+        "monitor.c",
+        "tb-maint.c",
+        "tcg-accel-ops-icount.c",
+        "tcg-accel-ops-mttcg.c",
+        "tcg-accel-ops-rr.c",
+        "tcg-accel-ops.c",
+        "tcg-all.c",
+        "tcg-runtime-gvec.c",
+        "tcg-runtime.c",
+        "tcg-stats.c",
+        "translate-all.c",
+        "translator.c",
+        "watchpoint.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__84",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+filegroup(
+    name = "user_fg_2",
+    srcs = [
+        "cpu-exec-common.c",
+        "cpu-exec.c",
+        "tb-maint.c",
+        "tcg-all.c",
+        "tcg-runtime-gvec.c",
+        "tcg-runtime.c",
+        "tcg-stats.c",
+        "translate-all.c",
+        "translator.c",
+        "user-exec-stub.c",
+        "user-exec.c",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_accel_tcg",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

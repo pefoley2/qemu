@@ -1,0 +1,32 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_44",
+    srcs = [
+        "mac-nubus-bridge.c",
+        "nubus-bridge.c",
+        "nubus-bus.c",
+        "nubus-device.c",
+        "nubus-virtio-mmio.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__50",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_nubus",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

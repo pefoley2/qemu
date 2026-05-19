@@ -1,0 +1,46 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "arch_srcs_10",
+    srcs = [
+        "accel-target.c",
+    ],
+)
+
+filegroup(
+    name = "common_fg",
+    srcs = [
+        "accel-common.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_8",
+    srcs = [
+        "accel-blocker.c",
+        "accel-irq.c",
+        "accel-qmp.c",
+        "accel-system.c",
+        "dummy-cpus.c",
+    ],
+)
+
+filegroup(
+    name = "user_fg_1",
+    srcs = [
+        "accel-user.c",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_accel",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

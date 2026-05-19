@@ -1,0 +1,24 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_genrule")
+
+meson_genrule(
+    name = "pyvenv_functests_group",
+    outs = [
+        "functests.group",
+    ],
+    srcs = [
+        "//:pyvenv_common_deps",
+        "//build/pyvenv/bin:ensuregroup_cmd",
+    ],
+    tools = [
+        "//:/usr/local/google/home/pefoley/qemu/build/pyvenv/bin/python3",
+    ],
+    cmd = "mkdir -p $(GENDIR)/build/pyvenv/bin && cp $(location //build/pyvenv/bin:ensuregroup_cmd) $(GENDIR)/build/pyvenv/bin && $(location //:/usr/local/google/home/pefoley/qemu/build/pyvenv/bin/python3) -B $(GENDIR)/python/scripts/mkvenv.py ensuregroup --online --online --dir $(GENDIR)/python/wheels $(location //:pyvenv_common_deps) functests",
+)

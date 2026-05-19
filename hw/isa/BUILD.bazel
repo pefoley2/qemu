@@ -1,0 +1,43 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "arch_srcs_15",
+    srcs = [
+        "lpc_ich9.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_35",
+    srcs = [
+        "apm.c",
+        "fdc37m81x-superio.c",
+        "i82378.c",
+        "isa-bus.c",
+        "isa-superio.c",
+        "pc87312.c",
+        "piix.c",
+        "smc37c669-superio.c",
+        "vt82c686.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__42",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_isa",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,61 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_genrule")
+
+meson_genrule(
+    name = "QGA QAPI files",
+    outs = [
+        "qga-qapi-commands.c",
+        "qga-qapi-commands.h",
+        "qga-qapi-emit-events.c",
+        "qga-qapi-emit-events.h",
+        "qga-qapi-events.c",
+        "qga-qapi-events.h",
+        "qga-qapi-init-commands.c",
+        "qga-qapi-init-commands.h",
+        "qga-qapi-introspect.c",
+        "qga-qapi-introspect.h",
+        "qga-qapi-types.c",
+        "qga-qapi-types.h",
+        "qga-qapi-visit.c",
+        "qga-qapi-visit.h",
+    ],
+    srcs = [
+        "//scripts/qapi:__init___py",
+        "//scripts/qapi:backend_py",
+        "//scripts/qapi:commands_py",
+        "//scripts/qapi:common_py",
+        "//scripts/qapi:error_py",
+        "//scripts/qapi:events_py",
+        "//scripts/qapi:expr_py",
+        "//scripts/qapi:features_py",
+        "//scripts/qapi:gen_py",
+        "//scripts/qapi:introspect_py",
+        "//scripts/qapi:main_py",
+        "//scripts/qapi:parser_py",
+        "//scripts/qapi:schema_py",
+        "//scripts/qapi:source_py",
+        "//scripts/qapi:types_py",
+        "//scripts/qapi:visit_py",
+        "//scripts:qapi-gen_py",
+        "qapi-schema.json",
+    ],
+    tools = [
+        "//scripts:qapi-py_binary",
+    ],
+    export_include_dirs = [
+        "qga",
+    ],
+    cmd = "$(location //scripts:qapi-py_binary) -o qga -p qga- $(location qapi-schema.json) --suppress-tracing",
+)
+
+meson_cc_headers(
+    name = "inc_qga",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,37 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "block_fg",
+    srcs = [
+        "client-connection.c",
+        "client.c",
+        "common.c",
+    ],
+)
+
+filegroup(
+    name = "blockdev_fg",
+    srcs = [
+        "server.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__12",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_nbd",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

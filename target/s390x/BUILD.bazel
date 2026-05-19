@@ -1,0 +1,33 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_genrule")
+
+filegroup(
+    name = "trace-events__97",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_genrule(
+    name = "gen-features.h",
+    outs = [
+        "gen-features.h",
+    ],
+    export_include_dirs = [
+        "target",
+        "target/s390x",
+    ],
+    cmd = "> $(location gen-features.h)",
+)
+
+meson_cc_headers(
+    name = "inc_target_s390x",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

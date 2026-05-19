@@ -1,0 +1,31 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_genrule")
+
+meson_genrule(
+    name = "QAPI test (include)",
+    outs = [
+        "test-qapi-commands-sub-module.c",
+        "test-qapi-commands-sub-module.h",
+        "test-qapi-events-sub-module.c",
+        "test-qapi-events-sub-module.h",
+        "test-qapi-types-sub-module.c",
+        "test-qapi-types-sub-module.h",
+        "test-qapi-visit-sub-module.c",
+        "test-qapi-visit-sub-module.h",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    export_include_dirs = [
+        "tests",
+        "tests/include",
+    ],
+    cmd = "-c",
+)

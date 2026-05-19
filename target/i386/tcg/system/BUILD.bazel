@@ -1,0 +1,21 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "arch_srcs_2",
+    srcs = [
+        "bpt_helper.c",
+        "excp_helper.c",
+        "fpu_helper.c",
+        "misc_helper.c",
+        "seg_helper.c",
+        "smm_helper.c",
+        "svm_helper.c",
+        "tcg-cpu.c",
+    ],
+)

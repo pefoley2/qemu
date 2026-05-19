@@ -1,0 +1,414 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_cc_library", "meson_genrule")
+
+filegroup(
+    name = "system_fg_2",
+    srcs = [
+        "console-vc-stubs.c",
+        "input-barrier.c",
+        "input-legacy.c",
+        "input-linux.c",
+        "input.c",
+        "spice-module.c",
+        "udmabuf.c",
+        "ui-hmp-cmds.c",
+        "ui-qmp-cmds.c",
+        "util.c",
+        "vnc-stubs.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__82",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_genrule(
+    name = "input-keymap-atset1-to-qcode.c.inc",
+    outs = [
+        "input-keymap-atset1-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_atset1_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) atset1 qcode > $(location input-keymap-atset1-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-linux-to-qcode.c.inc",
+    outs = [
+        "input-keymap-linux-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_linux_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) linux qcode > $(location input-keymap-linux-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-osx-to-qcode.c.inc",
+    outs = [
+        "input-keymap-osx-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_osx_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) osx qcode > $(location input-keymap-osx-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qcode-to-atset1.c.inc",
+    outs = [
+        "input-keymap-qcode-to-atset1.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qcode_to_atset1 $(location //subprojects/keycodemapdb/data:keymaps_csv) qcode atset1 > $(location input-keymap-qcode-to-atset1.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qcode-to-atset2.c.inc",
+    outs = [
+        "input-keymap-qcode-to-atset2.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qcode_to_atset2 $(location //subprojects/keycodemapdb/data:keymaps_csv) qcode atset2 > $(location input-keymap-qcode-to-atset2.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qcode-to-atset3.c.inc",
+    outs = [
+        "input-keymap-qcode-to-atset3.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qcode_to_atset3 $(location //subprojects/keycodemapdb/data:keymaps_csv) qcode atset3 > $(location input-keymap-qcode-to-atset3.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qcode-to-linux.c.inc",
+    outs = [
+        "input-keymap-qcode-to-linux.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qcode_to_linux $(location //subprojects/keycodemapdb/data:keymaps_csv) qcode linux > $(location input-keymap-qcode-to-linux.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qcode-to-qnum.c.inc",
+    outs = [
+        "input-keymap-qcode-to-qnum.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qcode_to_qnum $(location //subprojects/keycodemapdb/data:keymaps_csv) qcode qnum > $(location input-keymap-qcode-to-qnum.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qcode-to-sun.c.inc",
+    outs = [
+        "input-keymap-qcode-to-sun.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qcode_to_sun $(location //subprojects/keycodemapdb/data:keymaps_csv) qcode sun > $(location input-keymap-qcode-to-sun.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-qnum-to-qcode.c.inc",
+    outs = [
+        "input-keymap-qnum-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_qnum_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) qnum qcode > $(location input-keymap-qnum-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-usb-to-qcode.c.inc",
+    outs = [
+        "input-keymap-usb-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_usb_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) usb qcode > $(location input-keymap-usb-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-win32-to-qcode.c.inc",
+    outs = [
+        "input-keymap-win32-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_win32_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) win32 qcode > $(location input-keymap-win32-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-x11-to-qcode.c.inc",
+    outs = [
+        "input-keymap-x11-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_x11_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) x11 qcode > $(location input-keymap-x11-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-xorgevdev-to-qcode.c.inc",
+    outs = [
+        "input-keymap-xorgevdev-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_xorgevdev_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) xorgevdev qcode > $(location input-keymap-xorgevdev-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-xorgkbd-to-qcode.c.inc",
+    outs = [
+        "input-keymap-xorgkbd-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_xorgkbd_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) xorgkbd qcode > $(location input-keymap-xorgkbd-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-xorgxquartz-to-qcode.c.inc",
+    outs = [
+        "input-keymap-xorgxquartz-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_xorgxquartz_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) xorgxquartz qcode > $(location input-keymap-xorgxquartz-to-qcode.c.inc)",
+)
+
+meson_genrule(
+    name = "input-keymap-xorgxwin-to-qcode.c.inc",
+    outs = [
+        "input-keymap-xorgxwin-to-qcode.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//subprojects/keycodemapdb/data:keymaps_csv",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && $(GENDIR)/subprojects/keycodemapdb/tools/keymap-gen code-map --lang glib2 --varname qemu_input_map_xorgxwin_to_qcode $(location //subprojects/keycodemapdb/data:keymaps_csv) xorgxwin qcode > $(location input-keymap-xorgxwin-to-qcode.c.inc)",
+)
+
+meson_cc_headers(
+    name = "inc_ui",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)
+
+meson_cc_library(
+    name = "qemuui",
+    srcs = [
+        "clipboard.c",
+        "console.c",
+        "cursor.c",
+        "display-surface.c",
+        "dmabuf.c",
+        "input-keymap.c",
+        "kbd-state.c",
+        "keymaps.c",
+        "qemu-pixman.c",
+        "vgafont.c",
+    ],
+    deps = [
+        "///usr/local/google/home/pefoley/qemu:inc__usr_local_google_home_pefoley_qemu",
+        "//:config-poison.h",
+        "//:hmp-commands-info.h",
+        "//:hmp-commands.h",
+        "//:qemu-img-cmds.h",
+        "//:qemu-version.h",
+        "//:qemu_c_project_args",
+        "//qapi:shared QAPI source files",
+        "//trace:trace-accel_hvf.h",
+        "//trace:trace-accel_kvm.h",
+        "//trace:trace-accel_mshv.h",
+        "//trace:trace-accel_nitro.h",
+        "//trace:trace-accel_tcg.h",
+        "//trace:trace-audio.h",
+        "//trace:trace-authz.h",
+        "//trace:trace-backends.h",
+        "//trace:trace-backends_tpm.h",
+        "//trace:trace-block.h",
+        "//trace:trace-chardev.h",
+        "//trace:trace-crypto.h",
+        "//trace:trace-ebpf.h",
+        "//trace:trace-gdbstub.h",
+        "//trace:trace-hw_9pfs.h",
+        "//trace:trace-hw_acpi.h",
+        "//trace:trace-hw_adc.h",
+        "//trace:trace-hw_alpha.h",
+        "//trace:trace-hw_arm.h",
+        "//trace:trace-hw_audio.h",
+        "//trace:trace-hw_block.h",
+        "//trace:trace-hw_char.h",
+        "//trace:trace-hw_core.h",
+        "//trace:trace-hw_display.h",
+        "//trace:trace-hw_dma.h",
+        "//trace:trace-hw_fsi.h",
+        "//trace:trace-hw_gpio.h",
+        "//trace:trace-hw_hyperv.h",
+        "//trace:trace-hw_i2c.h",
+        "//trace:trace-hw_i386.h",
+        "//trace:trace-hw_i386_kvm.h",
+        "//trace:trace-hw_i386_xen.h",
+        "//trace:trace-hw_i3c.h",
+        "//trace:trace-hw_ide.h",
+        "//trace:trace-hw_input.h",
+        "//trace:trace-hw_intc.h",
+        "//trace:trace-hw_isa.h",
+        "//trace:trace-hw_mem.h",
+        "//trace:trace-hw_mips.h",
+        "//trace:trace-hw_misc.h",
+        "//trace:trace-hw_misc_macio.h",
+        "//trace:trace-hw_net.h",
+        "//trace:trace-hw_net_can.h",
+        "//trace:trace-hw_nitro.h",
+        "//trace:trace-hw_nubus.h",
+        "//trace:trace-hw_nvme.h",
+        "//trace:trace-hw_nvram.h",
+        "//trace:trace-hw_pci.h",
+        "//trace:trace-hw_pci_host.h",
+        "//trace:trace-hw_ppc.h",
+        "//trace:trace-hw_remote.h",
+        "//trace:trace-hw_riscv.h",
+        "//trace:trace-hw_rtc.h",
+        "//trace:trace-hw_s390x.h",
+        "//trace:trace-hw_scsi.h",
+        "//trace:trace-hw_sd.h",
+        "//trace:trace-hw_sensor.h",
+        "//trace:trace-hw_sh4.h",
+        "//trace:trace-hw_sparc.h",
+        "//trace:trace-hw_sparc64.h",
+        "//trace:trace-hw_ssi.h",
+        "//trace:trace-hw_timer.h",
+        "//trace:trace-hw_tpm.h",
+        "//trace:trace-hw_uefi.h",
+        "//trace:trace-hw_ufs.h",
+        "//trace:trace-hw_usb.h",
+        "//trace:trace-hw_vfio.h",
+        "//trace:trace-hw_vfio_user.h",
+        "//trace:trace-hw_virtio.h",
+        "//trace:trace-hw_vmapple.h",
+        "//trace:trace-hw_watchdog.h",
+        "//trace:trace-hw_xen.h",
+        "//trace:trace-io.h",
+        "//trace:trace-migration.h",
+        "//trace:trace-monitor.h",
+        "//trace:trace-nbd.h",
+        "//trace:trace-net.h",
+        "//trace:trace-qapi.h",
+        "//trace:trace-qapi_commands_accelerator_trace_events.h",
+        "//trace:trace-qapi_commands_acpi_hest_trace_events.h",
+        "//trace:trace-qapi_commands_acpi_trace_events.h",
+        "//trace:trace-qapi_commands_audio_trace_events.h",
+        "//trace:trace-qapi_commands_authz_trace_events.h",
+        "//trace:trace-qapi_commands_block_core_trace_events.h",
+        "//trace:trace-qapi_commands_block_export_trace_events.h",
+        "//trace:trace-qapi_commands_block_trace_events.h",
+        "//trace:trace-qapi_commands_char_trace_events.h",
+        "//trace:trace-qapi_commands_common_trace_events.h",
+        "//trace:trace-qapi_commands_compat_trace_events.h",
+        "//trace:trace-qapi_commands_control_trace_events.h",
+        "//trace:trace-qapi_commands_crypto_trace_events.h",
+        "//trace:trace-qapi_commands_cryptodev_trace_events.h",
+        "//trace:trace-qapi_commands_cxl_trace_events.h",
+        "//trace:trace-qapi_commands_dump_trace_events.h",
+        "//trace:trace-qapi_commands_ebpf_trace_events.h",
+        "//trace:trace-qapi_commands_error_trace_events.h",
+        "//trace:trace-qapi_commands_introspect_trace_events.h",
+        "//trace:trace-qapi_commands_job_trace_events.h",
+        "//trace:trace-qapi_commands_machine_common_trace_events.h",
+        "//trace:trace-qapi_commands_machine_s390x_trace_events.h",
+        "//trace:trace-qapi_commands_machine_trace_events.h",
+        "//trace:trace-qapi_commands_migration_trace_events.h",
+        "//trace:trace-qapi_commands_misc_arm_trace_events.h",
+        "//trace:trace-qapi_commands_misc_i386_trace_events.h",
+        "//trace:trace-qapi_commands_misc_trace_events.h",
+        "//trace:trace-qapi_commands_net_trace_events.h",
+        "//trace:trace-qapi_commands_pci_trace_events.h",
+        "//trace:trace-qapi_commands_pragma_trace_events.h",
+        "//trace:trace-qapi_commands_qdev_trace_events.h",
+        "//trace:trace-qapi_commands_qom_trace_events.h",
+        "//trace:trace-qapi_commands_replay_trace_events.h",
+        "//trace:trace-qapi_commands_rocker_trace_events.h",
+        "//trace:trace-qapi_commands_run_state_trace_events.h",
+        "//trace:trace-qapi_commands_sockets_trace_events.h",
+        "//trace:trace-qapi_commands_stats_trace_events.h",
+        "//trace:trace-qapi_commands_tpm_trace_events.h",
+        "//trace:trace-qapi_commands_trace_trace_events.h",
+        "//trace:trace-qapi_commands_transaction_trace_events.h",
+        "//trace:trace-qapi_commands_uefi_trace_events.h",
+        "//trace:trace-qapi_commands_ui_trace_events.h",
+        "//trace:trace-qapi_commands_vfio_trace_events.h",
+        "//trace:trace-qapi_commands_virtio_trace_events.h",
+        "//trace:trace-qapi_commands_yank_trace_events.h",
+        "//trace:trace-qom.h",
+        "//trace:trace-replay.h",
+        "//trace:trace-root.h",
+        "//trace:trace-scsi.h",
+        "//trace:trace-system.h",
+        "//trace:trace-target_arm.h",
+        "//trace:trace-target_arm_hvf.h",
+        "//trace:trace-target_arm_tcg.h",
+        "//trace:trace-target_hppa.h",
+        "//trace:trace-target_i386.h",
+        "//trace:trace-target_i386_kvm.h",
+        "//trace:trace-target_i386_whpx.h",
+        "//trace:trace-target_loongarch.h",
+        "//trace:trace-target_mips_tcg.h",
+        "//trace:trace-target_ppc.h",
+        "//trace:trace-target_riscv.h",
+        "//trace:trace-target_s390x.h",
+        "//trace:trace-target_s390x_kvm.h",
+        "//trace:trace-target_sparc.h",
+        "//trace:trace-tools_qemu_vnc.h",
+        "//trace:trace-ui.h",
+        "//trace:trace-util.h",
+        "//ui:inc_ui",
+    ],
+)

@@ -1,0 +1,112 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+load("@rules_python//python:py_binary.bzl", "py_binary")
+
+filegroup(
+    name = "hxtool_",
+    srcs = [
+        "hxtool",
+    ],
+)
+
+filegroup(
+    name = "make-config-poison_sh",
+    srcs = [
+        "make-config-poison.sh",
+    ],
+)
+
+filegroup(
+    name = "qapi-gen_py",
+    srcs = [
+        "qapi-gen.py",
+    ],
+)
+
+filegroup(
+    name = "qemu-version_sh",
+    srcs = [
+        "qemu-version.sh",
+    ],
+)
+
+py_binary(
+    name = "block-coroutine-wrapper_py_binary",
+    main = "../scripts/block-coroutine-wrapper.py",
+    srcs = [
+        "../scripts/block-coroutine-wrapper.py",
+        "/usr/local/google/home/pefoley/qemu/block/../scripts/block-coroutine-wrapper.py",
+    ],
+)
+
+py_binary(
+    name = "decodetree_py_binary",
+    main = "decodetree.py",
+    srcs = [
+        "decodetree.py",
+    ],
+)
+
+py_binary(
+    name = "feature_to_c_py_binary",
+    main = "../scripts/feature_to_c.py",
+    srcs = [
+        "../scripts/feature_to_c.py",
+        "/usr/local/google/home/pefoley/qemu/gdbstub/../scripts/feature_to_c.py",
+    ],
+)
+
+py_binary(
+    name = "qapi-py_binary",
+    main = "scripts/qapi-gen.py",
+    srcs = [
+        "/usr/local/google/home/pefoley/qemu/scripts/qapi-gen.py",
+        "scripts/qapi-gen.py",
+    ],
+)
+
+py_binary(
+    name = "shaderinclude_py_binary",
+    main = "scripts/shaderinclude.py",
+    srcs = [
+        "/usr/local/google/home/pefoley/qemu/scripts/shaderinclude.py",
+        "scripts/shaderinclude.py",
+    ],
+)
+
+py_binary(
+    name = "tracetool_py_binary",
+    main = "tracetool.py",
+    srcs = [
+        "scripts/tracetool/__init__.py",
+        "scripts/tracetool/backend/__init__.py",
+        "scripts/tracetool/backend/dtrace.py",
+        "scripts/tracetool/backend/ftrace.py",
+        "scripts/tracetool/backend/log.py",
+        "scripts/tracetool/backend/simple.py",
+        "scripts/tracetool/backend/syslog.py",
+        "scripts/tracetool/backend/ust.py",
+        "scripts/tracetool/format/__init__.py",
+        "scripts/tracetool/format/c.py",
+        "scripts/tracetool/format/d.py",
+        "scripts/tracetool/format/h.py",
+        "scripts/tracetool/format/log_stap.py",
+        "scripts/tracetool/format/simpletrace_stap.py",
+        "scripts/tracetool/format/stap.py",
+        "scripts/tracetool/format/ust_events_c.py",
+        "scripts/tracetool/format/ust_events_h.py",
+        "tracetool.py",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_scripts",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

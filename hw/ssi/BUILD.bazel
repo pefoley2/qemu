@@ -1,0 +1,43 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_55",
+    srcs = [
+        "allwinner-a10-spi.c",
+        "aspeed_smc.c",
+        "bcm2835_spi.c",
+        "ibex_spi_host.c",
+        "imx_spi.c",
+        "mss-spi.c",
+        "npcm7xx_fiu.c",
+        "npcm_pspi.c",
+        "pl022.c",
+        "pnv_spi.c",
+        "sifive_spi.c",
+        "ssi.c",
+        "stm32f2xx_spi.c",
+        "xilinx_spi.c",
+        "xilinx_spips.c",
+        "xlnx-versal-ospi.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__65",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_ssi",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

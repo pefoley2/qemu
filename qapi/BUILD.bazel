@@ -1,0 +1,864 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_genrule")
+
+filegroup(
+    name = "accelerator_json",
+    srcs = [
+        "accelerator.json",
+    ],
+)
+
+filegroup(
+    name = "acpi-hest_json",
+    srcs = [
+        "acpi-hest.json",
+    ],
+)
+
+filegroup(
+    name = "acpi_json",
+    srcs = [
+        "acpi.json",
+    ],
+)
+
+filegroup(
+    name = "audio_json",
+    srcs = [
+        "audio.json",
+    ],
+)
+
+filegroup(
+    name = "authz_json",
+    srcs = [
+        "authz.json",
+    ],
+)
+
+filegroup(
+    name = "block-core_json",
+    srcs = [
+        "block-core.json",
+    ],
+)
+
+filegroup(
+    name = "block-export_json",
+    srcs = [
+        "block-export.json",
+    ],
+)
+
+filegroup(
+    name = "block_json",
+    srcs = [
+        "block.json",
+    ],
+)
+
+filegroup(
+    name = "char_json",
+    srcs = [
+        "char.json",
+    ],
+)
+
+filegroup(
+    name = "common_json",
+    srcs = [
+        "common.json",
+    ],
+)
+
+filegroup(
+    name = "compat_json",
+    srcs = [
+        "compat.json",
+    ],
+)
+
+filegroup(
+    name = "control_json",
+    srcs = [
+        "control.json",
+    ],
+)
+
+filegroup(
+    name = "crypto_json",
+    srcs = [
+        "crypto.json",
+    ],
+)
+
+filegroup(
+    name = "cryptodev_json",
+    srcs = [
+        "cryptodev.json",
+    ],
+)
+
+filegroup(
+    name = "cxl_json",
+    srcs = [
+        "cxl.json",
+    ],
+)
+
+filegroup(
+    name = "dump_json",
+    srcs = [
+        "dump.json",
+    ],
+)
+
+filegroup(
+    name = "ebpf_json",
+    srcs = [
+        "ebpf.json",
+    ],
+)
+
+filegroup(
+    name = "error_json",
+    srcs = [
+        "error.json",
+    ],
+)
+
+filegroup(
+    name = "introspect_json",
+    srcs = [
+        "introspect.json",
+    ],
+)
+
+filegroup(
+    name = "job_json",
+    srcs = [
+        "job.json",
+    ],
+)
+
+filegroup(
+    name = "machine-common_json",
+    srcs = [
+        "machine-common.json",
+    ],
+)
+
+filegroup(
+    name = "machine-s390x_json",
+    srcs = [
+        "machine-s390x.json",
+    ],
+)
+
+filegroup(
+    name = "machine_json",
+    srcs = [
+        "machine.json",
+    ],
+)
+
+filegroup(
+    name = "migration_json",
+    srcs = [
+        "migration.json",
+    ],
+)
+
+filegroup(
+    name = "misc-arm_json",
+    srcs = [
+        "misc-arm.json",
+    ],
+)
+
+filegroup(
+    name = "misc-i386_json",
+    srcs = [
+        "misc-i386.json",
+    ],
+)
+
+filegroup(
+    name = "misc_json",
+    srcs = [
+        "misc.json",
+    ],
+)
+
+filegroup(
+    name = "net_json",
+    srcs = [
+        "net.json",
+    ],
+)
+
+filegroup(
+    name = "pci_json",
+    srcs = [
+        "pci.json",
+    ],
+)
+
+filegroup(
+    name = "pragma_json",
+    srcs = [
+        "pragma.json",
+    ],
+)
+
+filegroup(
+    name = "qapi-schema_json",
+    srcs = [
+        "qapi-schema.json",
+    ],
+)
+
+filegroup(
+    name = "qdev_json",
+    srcs = [
+        "qdev.json",
+    ],
+)
+
+filegroup(
+    name = "qemuutil_fg",
+    srcs = [
+        "opts-visitor.c",
+        "qapi-clone-visitor.c",
+        "qapi-dealloc-visitor.c",
+        "qapi-forward-visitor.c",
+        "qapi-type-helpers.c",
+        "qapi-util.c",
+        "qapi-visit-core.c",
+        "qmp-dispatch.c",
+        "qmp-event.c",
+        "qmp-registry.c",
+        "qobject-input-visitor.c",
+        "qobject-output-visitor.c",
+        "string-input-visitor.c",
+        "string-output-visitor.c",
+    ],
+)
+
+filegroup(
+    name = "qom_json",
+    srcs = [
+        "qom.json",
+    ],
+)
+
+filegroup(
+    name = "replay_json",
+    srcs = [
+        "replay.json",
+    ],
+)
+
+filegroup(
+    name = "rocker_json",
+    srcs = [
+        "rocker.json",
+    ],
+)
+
+filegroup(
+    name = "run-state_json",
+    srcs = [
+        "run-state.json",
+    ],
+)
+
+filegroup(
+    name = "sockets_json",
+    srcs = [
+        "sockets.json",
+    ],
+)
+
+filegroup(
+    name = "stats_json",
+    srcs = [
+        "stats.json",
+    ],
+)
+
+filegroup(
+    name = "tpm_json",
+    srcs = [
+        "tpm.json",
+    ],
+)
+
+filegroup(
+    name = "trace-events__2",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+filegroup(
+    name = "trace_json",
+    srcs = [
+        "trace.json",
+    ],
+)
+
+filegroup(
+    name = "transaction_json",
+    srcs = [
+        "transaction.json",
+    ],
+)
+
+filegroup(
+    name = "uefi_json",
+    srcs = [
+        "uefi.json",
+    ],
+)
+
+filegroup(
+    name = "ui_json",
+    srcs = [
+        "ui.json",
+    ],
+)
+
+filegroup(
+    name = "vfio_json",
+    srcs = [
+        "vfio.json",
+    ],
+)
+
+filegroup(
+    name = "virtio_json",
+    srcs = [
+        "virtio.json",
+    ],
+)
+
+filegroup(
+    name = "yank_json",
+    srcs = [
+        "yank.json",
+    ],
+)
+
+meson_genrule(
+    name = "shared QAPI source files",
+    outs = [
+        "qapi-builtin-types.c",
+        "qapi-builtin-types.h",
+        "qapi-builtin-visit.c",
+        "qapi-builtin-visit.h",
+        "qapi-commands-accelerator.c",
+        "qapi-commands-accelerator.h",
+        "qapi-commands-accelerator.trace-events",
+        "qapi-commands-acpi-hest.c",
+        "qapi-commands-acpi-hest.h",
+        "qapi-commands-acpi-hest.trace-events",
+        "qapi-commands-acpi.c",
+        "qapi-commands-acpi.h",
+        "qapi-commands-acpi.trace-events",
+        "qapi-commands-audio.c",
+        "qapi-commands-audio.h",
+        "qapi-commands-audio.trace-events",
+        "qapi-commands-authz.c",
+        "qapi-commands-authz.h",
+        "qapi-commands-authz.trace-events",
+        "qapi-commands-block-core.c",
+        "qapi-commands-block-core.h",
+        "qapi-commands-block-core.trace-events",
+        "qapi-commands-block-export.c",
+        "qapi-commands-block-export.h",
+        "qapi-commands-block-export.trace-events",
+        "qapi-commands-block.c",
+        "qapi-commands-block.h",
+        "qapi-commands-block.trace-events",
+        "qapi-commands-char.c",
+        "qapi-commands-char.h",
+        "qapi-commands-char.trace-events",
+        "qapi-commands-common.c",
+        "qapi-commands-common.h",
+        "qapi-commands-common.trace-events",
+        "qapi-commands-compat.c",
+        "qapi-commands-compat.h",
+        "qapi-commands-compat.trace-events",
+        "qapi-commands-control.c",
+        "qapi-commands-control.h",
+        "qapi-commands-control.trace-events",
+        "qapi-commands-crypto.c",
+        "qapi-commands-crypto.h",
+        "qapi-commands-crypto.trace-events",
+        "qapi-commands-cryptodev.c",
+        "qapi-commands-cryptodev.h",
+        "qapi-commands-cryptodev.trace-events",
+        "qapi-commands-cxl.c",
+        "qapi-commands-cxl.h",
+        "qapi-commands-cxl.trace-events",
+        "qapi-commands-dump.c",
+        "qapi-commands-dump.h",
+        "qapi-commands-dump.trace-events",
+        "qapi-commands-ebpf.c",
+        "qapi-commands-ebpf.h",
+        "qapi-commands-ebpf.trace-events",
+        "qapi-commands-error.c",
+        "qapi-commands-error.h",
+        "qapi-commands-error.trace-events",
+        "qapi-commands-introspect.c",
+        "qapi-commands-introspect.h",
+        "qapi-commands-introspect.trace-events",
+        "qapi-commands-job.c",
+        "qapi-commands-job.h",
+        "qapi-commands-job.trace-events",
+        "qapi-commands-machine-common.c",
+        "qapi-commands-machine-common.h",
+        "qapi-commands-machine-common.trace-events",
+        "qapi-commands-machine-s390x.c",
+        "qapi-commands-machine-s390x.h",
+        "qapi-commands-machine-s390x.trace-events",
+        "qapi-commands-machine.c",
+        "qapi-commands-machine.h",
+        "qapi-commands-machine.trace-events",
+        "qapi-commands-migration.c",
+        "qapi-commands-migration.h",
+        "qapi-commands-migration.trace-events",
+        "qapi-commands-misc-arm.c",
+        "qapi-commands-misc-arm.h",
+        "qapi-commands-misc-arm.trace-events",
+        "qapi-commands-misc-i386.c",
+        "qapi-commands-misc-i386.h",
+        "qapi-commands-misc-i386.trace-events",
+        "qapi-commands-misc.c",
+        "qapi-commands-misc.h",
+        "qapi-commands-misc.trace-events",
+        "qapi-commands-net.c",
+        "qapi-commands-net.h",
+        "qapi-commands-net.trace-events",
+        "qapi-commands-pci.c",
+        "qapi-commands-pci.h",
+        "qapi-commands-pci.trace-events",
+        "qapi-commands-pragma.c",
+        "qapi-commands-pragma.h",
+        "qapi-commands-pragma.trace-events",
+        "qapi-commands-qdev.c",
+        "qapi-commands-qdev.h",
+        "qapi-commands-qdev.trace-events",
+        "qapi-commands-qom.c",
+        "qapi-commands-qom.h",
+        "qapi-commands-qom.trace-events",
+        "qapi-commands-replay.c",
+        "qapi-commands-replay.h",
+        "qapi-commands-replay.trace-events",
+        "qapi-commands-rocker.c",
+        "qapi-commands-rocker.h",
+        "qapi-commands-rocker.trace-events",
+        "qapi-commands-run-state.c",
+        "qapi-commands-run-state.h",
+        "qapi-commands-run-state.trace-events",
+        "qapi-commands-sockets.c",
+        "qapi-commands-sockets.h",
+        "qapi-commands-sockets.trace-events",
+        "qapi-commands-stats.c",
+        "qapi-commands-stats.h",
+        "qapi-commands-stats.trace-events",
+        "qapi-commands-tpm.c",
+        "qapi-commands-tpm.h",
+        "qapi-commands-tpm.trace-events",
+        "qapi-commands-trace.c",
+        "qapi-commands-trace.h",
+        "qapi-commands-trace.trace-events",
+        "qapi-commands-transaction.c",
+        "qapi-commands-transaction.h",
+        "qapi-commands-transaction.trace-events",
+        "qapi-commands-uefi.c",
+        "qapi-commands-uefi.h",
+        "qapi-commands-uefi.trace-events",
+        "qapi-commands-ui.c",
+        "qapi-commands-ui.h",
+        "qapi-commands-ui.trace-events",
+        "qapi-commands-vfio.c",
+        "qapi-commands-vfio.h",
+        "qapi-commands-vfio.trace-events",
+        "qapi-commands-virtio.c",
+        "qapi-commands-virtio.h",
+        "qapi-commands-virtio.trace-events",
+        "qapi-commands-yank.c",
+        "qapi-commands-yank.h",
+        "qapi-commands-yank.trace-events",
+        "qapi-commands.c",
+        "qapi-commands.h",
+        "qapi-emit-events.c",
+        "qapi-emit-events.h",
+        "qapi-events-accelerator.c",
+        "qapi-events-accelerator.h",
+        "qapi-events-acpi-hest.c",
+        "qapi-events-acpi-hest.h",
+        "qapi-events-acpi.c",
+        "qapi-events-acpi.h",
+        "qapi-events-audio.c",
+        "qapi-events-audio.h",
+        "qapi-events-authz.c",
+        "qapi-events-authz.h",
+        "qapi-events-block-core.c",
+        "qapi-events-block-core.h",
+        "qapi-events-block-export.c",
+        "qapi-events-block-export.h",
+        "qapi-events-block.c",
+        "qapi-events-block.h",
+        "qapi-events-char.c",
+        "qapi-events-char.h",
+        "qapi-events-common.c",
+        "qapi-events-common.h",
+        "qapi-events-compat.c",
+        "qapi-events-compat.h",
+        "qapi-events-control.c",
+        "qapi-events-control.h",
+        "qapi-events-crypto.c",
+        "qapi-events-crypto.h",
+        "qapi-events-cryptodev.c",
+        "qapi-events-cryptodev.h",
+        "qapi-events-cxl.c",
+        "qapi-events-cxl.h",
+        "qapi-events-dump.c",
+        "qapi-events-dump.h",
+        "qapi-events-ebpf.c",
+        "qapi-events-ebpf.h",
+        "qapi-events-error.c",
+        "qapi-events-error.h",
+        "qapi-events-introspect.c",
+        "qapi-events-introspect.h",
+        "qapi-events-job.c",
+        "qapi-events-job.h",
+        "qapi-events-machine-common.c",
+        "qapi-events-machine-common.h",
+        "qapi-events-machine-s390x.c",
+        "qapi-events-machine-s390x.h",
+        "qapi-events-machine.c",
+        "qapi-events-machine.h",
+        "qapi-events-migration.c",
+        "qapi-events-migration.h",
+        "qapi-events-misc-arm.c",
+        "qapi-events-misc-arm.h",
+        "qapi-events-misc-i386.c",
+        "qapi-events-misc-i386.h",
+        "qapi-events-misc.c",
+        "qapi-events-misc.h",
+        "qapi-events-net.c",
+        "qapi-events-net.h",
+        "qapi-events-pci.c",
+        "qapi-events-pci.h",
+        "qapi-events-pragma.c",
+        "qapi-events-pragma.h",
+        "qapi-events-qdev.c",
+        "qapi-events-qdev.h",
+        "qapi-events-qom.c",
+        "qapi-events-qom.h",
+        "qapi-events-replay.c",
+        "qapi-events-replay.h",
+        "qapi-events-rocker.c",
+        "qapi-events-rocker.h",
+        "qapi-events-run-state.c",
+        "qapi-events-run-state.h",
+        "qapi-events-sockets.c",
+        "qapi-events-sockets.h",
+        "qapi-events-stats.c",
+        "qapi-events-stats.h",
+        "qapi-events-tpm.c",
+        "qapi-events-tpm.h",
+        "qapi-events-trace.c",
+        "qapi-events-trace.h",
+        "qapi-events-transaction.c",
+        "qapi-events-transaction.h",
+        "qapi-events-uefi.c",
+        "qapi-events-uefi.h",
+        "qapi-events-ui.c",
+        "qapi-events-ui.h",
+        "qapi-events-vfio.c",
+        "qapi-events-vfio.h",
+        "qapi-events-virtio.c",
+        "qapi-events-virtio.h",
+        "qapi-events-yank.c",
+        "qapi-events-yank.h",
+        "qapi-events.c",
+        "qapi-events.h",
+        "qapi-init-commands.c",
+        "qapi-init-commands.h",
+        "qapi-introspect.c",
+        "qapi-introspect.h",
+        "qapi-types-accelerator.c",
+        "qapi-types-accelerator.h",
+        "qapi-types-acpi-hest.c",
+        "qapi-types-acpi-hest.h",
+        "qapi-types-acpi.c",
+        "qapi-types-acpi.h",
+        "qapi-types-audio.c",
+        "qapi-types-audio.h",
+        "qapi-types-authz.c",
+        "qapi-types-authz.h",
+        "qapi-types-block-core.c",
+        "qapi-types-block-core.h",
+        "qapi-types-block-export.c",
+        "qapi-types-block-export.h",
+        "qapi-types-block.c",
+        "qapi-types-block.h",
+        "qapi-types-char.c",
+        "qapi-types-char.h",
+        "qapi-types-common.c",
+        "qapi-types-common.h",
+        "qapi-types-compat.c",
+        "qapi-types-compat.h",
+        "qapi-types-control.c",
+        "qapi-types-control.h",
+        "qapi-types-crypto.c",
+        "qapi-types-crypto.h",
+        "qapi-types-cryptodev.c",
+        "qapi-types-cryptodev.h",
+        "qapi-types-cxl.c",
+        "qapi-types-cxl.h",
+        "qapi-types-dump.c",
+        "qapi-types-dump.h",
+        "qapi-types-ebpf.c",
+        "qapi-types-ebpf.h",
+        "qapi-types-error.c",
+        "qapi-types-error.h",
+        "qapi-types-introspect.c",
+        "qapi-types-introspect.h",
+        "qapi-types-job.c",
+        "qapi-types-job.h",
+        "qapi-types-machine-common.c",
+        "qapi-types-machine-common.h",
+        "qapi-types-machine-s390x.c",
+        "qapi-types-machine-s390x.h",
+        "qapi-types-machine.c",
+        "qapi-types-machine.h",
+        "qapi-types-migration.c",
+        "qapi-types-migration.h",
+        "qapi-types-misc-arm.c",
+        "qapi-types-misc-arm.h",
+        "qapi-types-misc-i386.c",
+        "qapi-types-misc-i386.h",
+        "qapi-types-misc.c",
+        "qapi-types-misc.h",
+        "qapi-types-net.c",
+        "qapi-types-net.h",
+        "qapi-types-pci.c",
+        "qapi-types-pci.h",
+        "qapi-types-pragma.c",
+        "qapi-types-pragma.h",
+        "qapi-types-qdev.c",
+        "qapi-types-qdev.h",
+        "qapi-types-qom.c",
+        "qapi-types-qom.h",
+        "qapi-types-replay.c",
+        "qapi-types-replay.h",
+        "qapi-types-rocker.c",
+        "qapi-types-rocker.h",
+        "qapi-types-run-state.c",
+        "qapi-types-run-state.h",
+        "qapi-types-sockets.c",
+        "qapi-types-sockets.h",
+        "qapi-types-stats.c",
+        "qapi-types-stats.h",
+        "qapi-types-tpm.c",
+        "qapi-types-tpm.h",
+        "qapi-types-trace.c",
+        "qapi-types-trace.h",
+        "qapi-types-transaction.c",
+        "qapi-types-transaction.h",
+        "qapi-types-uefi.c",
+        "qapi-types-uefi.h",
+        "qapi-types-ui.c",
+        "qapi-types-ui.h",
+        "qapi-types-vfio.c",
+        "qapi-types-vfio.h",
+        "qapi-types-virtio.c",
+        "qapi-types-virtio.h",
+        "qapi-types-yank.c",
+        "qapi-types-yank.h",
+        "qapi-types.c",
+        "qapi-types.h",
+        "qapi-visit-accelerator.c",
+        "qapi-visit-accelerator.h",
+        "qapi-visit-acpi-hest.c",
+        "qapi-visit-acpi-hest.h",
+        "qapi-visit-acpi.c",
+        "qapi-visit-acpi.h",
+        "qapi-visit-audio.c",
+        "qapi-visit-audio.h",
+        "qapi-visit-authz.c",
+        "qapi-visit-authz.h",
+        "qapi-visit-block-core.c",
+        "qapi-visit-block-core.h",
+        "qapi-visit-block-export.c",
+        "qapi-visit-block-export.h",
+        "qapi-visit-block.c",
+        "qapi-visit-block.h",
+        "qapi-visit-char.c",
+        "qapi-visit-char.h",
+        "qapi-visit-common.c",
+        "qapi-visit-common.h",
+        "qapi-visit-compat.c",
+        "qapi-visit-compat.h",
+        "qapi-visit-control.c",
+        "qapi-visit-control.h",
+        "qapi-visit-crypto.c",
+        "qapi-visit-crypto.h",
+        "qapi-visit-cryptodev.c",
+        "qapi-visit-cryptodev.h",
+        "qapi-visit-cxl.c",
+        "qapi-visit-cxl.h",
+        "qapi-visit-dump.c",
+        "qapi-visit-dump.h",
+        "qapi-visit-ebpf.c",
+        "qapi-visit-ebpf.h",
+        "qapi-visit-error.c",
+        "qapi-visit-error.h",
+        "qapi-visit-introspect.c",
+        "qapi-visit-introspect.h",
+        "qapi-visit-job.c",
+        "qapi-visit-job.h",
+        "qapi-visit-machine-common.c",
+        "qapi-visit-machine-common.h",
+        "qapi-visit-machine-s390x.c",
+        "qapi-visit-machine-s390x.h",
+        "qapi-visit-machine.c",
+        "qapi-visit-machine.h",
+        "qapi-visit-migration.c",
+        "qapi-visit-migration.h",
+        "qapi-visit-misc-arm.c",
+        "qapi-visit-misc-arm.h",
+        "qapi-visit-misc-i386.c",
+        "qapi-visit-misc-i386.h",
+        "qapi-visit-misc.c",
+        "qapi-visit-misc.h",
+        "qapi-visit-net.c",
+        "qapi-visit-net.h",
+        "qapi-visit-pci.c",
+        "qapi-visit-pci.h",
+        "qapi-visit-pragma.c",
+        "qapi-visit-pragma.h",
+        "qapi-visit-qdev.c",
+        "qapi-visit-qdev.h",
+        "qapi-visit-qom.c",
+        "qapi-visit-qom.h",
+        "qapi-visit-replay.c",
+        "qapi-visit-replay.h",
+        "qapi-visit-rocker.c",
+        "qapi-visit-rocker.h",
+        "qapi-visit-run-state.c",
+        "qapi-visit-run-state.h",
+        "qapi-visit-sockets.c",
+        "qapi-visit-sockets.h",
+        "qapi-visit-stats.c",
+        "qapi-visit-stats.h",
+        "qapi-visit-tpm.c",
+        "qapi-visit-tpm.h",
+        "qapi-visit-trace.c",
+        "qapi-visit-trace.h",
+        "qapi-visit-transaction.c",
+        "qapi-visit-transaction.h",
+        "qapi-visit-uefi.c",
+        "qapi-visit-uefi.h",
+        "qapi-visit-ui.c",
+        "qapi-visit-ui.h",
+        "qapi-visit-vfio.c",
+        "qapi-visit-vfio.h",
+        "qapi-visit-virtio.c",
+        "qapi-visit-virtio.h",
+        "qapi-visit-yank.c",
+        "qapi-visit-yank.h",
+        "qapi-visit.c",
+        "qapi-visit.h",
+    ],
+    srcs = [
+        "//scripts/qapi:__init___py",
+        "//scripts/qapi:backend_py",
+        "//scripts/qapi:commands_py",
+        "//scripts/qapi:common_py",
+        "//scripts/qapi:error_py",
+        "//scripts/qapi:events_py",
+        "//scripts/qapi:expr_py",
+        "//scripts/qapi:features_py",
+        "//scripts/qapi:gen_py",
+        "//scripts/qapi:introspect_py",
+        "//scripts/qapi:main_py",
+        "//scripts/qapi:parser_py",
+        "//scripts/qapi:schema_py",
+        "//scripts/qapi:source_py",
+        "//scripts/qapi:types_py",
+        "//scripts/qapi:visit_py",
+        "//scripts:qapi-gen_py",
+        "accelerator.json",
+        "acpi-hest.json",
+        "acpi.json",
+        "audio.json",
+        "authz.json",
+        "block-core.json",
+        "block-export.json",
+        "block.json",
+        "char.json",
+        "common.json",
+        "compat.json",
+        "control.json",
+        "crypto.json",
+        "cryptodev.json",
+        "cxl.json",
+        "dump.json",
+        "ebpf.json",
+        "error.json",
+        "introspect.json",
+        "job.json",
+        "machine-common.json",
+        "machine-s390x.json",
+        "machine.json",
+        "migration.json",
+        "misc-arm.json",
+        "misc-i386.json",
+        "misc.json",
+        "net.json",
+        "pci.json",
+        "pragma.json",
+        "qapi-schema.json",
+        "qdev.json",
+        "qom.json",
+        "replay.json",
+        "rocker.json",
+        "run-state.json",
+        "sockets.json",
+        "stats.json",
+        "tpm.json",
+        "trace.json",
+        "transaction.json",
+        "uefi.json",
+        "ui.json",
+        "vfio.json",
+        "virtio.json",
+        "yank.json",
+    ],
+    tools = [
+        "//scripts:qapi-py_binary",
+    ],
+    export_include_dirs = [
+        "qapi",
+    ],
+    cmd = "$(location //scripts:qapi-py_binary) -o qapi -b $(location qapi-schema.json)",
+)
+
+meson_cc_headers(
+    name = "inc_qapi",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

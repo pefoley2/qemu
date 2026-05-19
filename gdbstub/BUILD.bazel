@@ -1,0 +1,54 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_genrule")
+
+filegroup(
+    name = "system_fg_68",
+    srcs = [
+        "gdbstub.c",
+        "syscalls.c",
+        "system.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__6",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+filegroup(
+    name = "user_fg_4",
+    srcs = [
+        "gdbstub.c",
+        "syscalls.c",
+        "user.c",
+    ],
+)
+
+meson_genrule(
+    name = "gdbstub-xml.c",
+    outs = [
+        "gdbstub-xml.c",
+    ],
+    srcs = [
+        "//gdbstub/gdb-xml:i386-64bit-apx_xml",
+        "//gdbstub/gdb-xml:i386-64bit_xml",
+    ],
+    tools = [
+        "//scripts:feature_to_c_py_binary",
+    ],
+    cmd = "$(location //scripts:feature_to_c_py_binary) $(location //gdbstub/gdb-xml:i386-64bit_xml) $(location //gdbstub/gdb-xml:i386-64bit-apx_xml) > $(location gdbstub-xml.c)",
+)
+
+meson_cc_headers(
+    name = "inc_gdbstub",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

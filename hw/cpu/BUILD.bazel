@@ -1,0 +1,19 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "system_fg_22",
+    srcs = [
+        "a15mpcore.c",
+        "a9mpcore.c",
+        "arm11mpcore.c",
+        "cluster.c",
+        "core.c",
+        "realview_mpcore.c",
+    ],
+)

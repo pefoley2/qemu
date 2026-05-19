@@ -1,0 +1,45 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_26",
+    srcs = [
+        "aspeed_gpio.c",
+        "aspeed_sgpio.c",
+        "bcm2835_gpio.c",
+        "bcm2838_gpio.c",
+        "gpio_key.c",
+        "gpio_pwr.c",
+        "imx_gpio.c",
+        "mpc8xxx.c",
+        "npcm7xx_gpio.c",
+        "nrf51_gpio.c",
+        "omap_gpio.c",
+        "pca9552.c",
+        "pca9554.c",
+        "pcf8574.c",
+        "pl061.c",
+        "sifive_gpio.c",
+        "stm32l4x5_gpio.c",
+        "zaurus.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__77",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_gpio",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,105 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_24",
+    srcs = [
+        "vhost-stub.c",
+        "virtio-md-stubs.c",
+        "virtio-stub.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_63",
+    srcs = [
+        "cbor-helpers.c",
+        "iothread-vq-mapping.c",
+        "vdpa-dev-pci.c",
+        "vdpa-dev.c",
+        "vhost-backend.c",
+        "vhost-iova-tree.c",
+        "vhost-scsi-pci.c",
+        "vhost-shadow-virtqueue.c",
+        "vhost-user-base.c",
+        "vhost-user-blk-pci.c",
+        "vhost-user-fs-pci.c",
+        "vhost-user-fs.c",
+        "vhost-user-gpio-pci.c",
+        "vhost-user-gpio.c",
+        "vhost-user-i2c-pci.c",
+        "vhost-user-i2c.c",
+        "vhost-user-input-pci.c",
+        "vhost-user-input.c",
+        "vhost-user-rng-pci.c",
+        "vhost-user-rng.c",
+        "vhost-user-rtc-pci.c",
+        "vhost-user-rtc.c",
+        "vhost-user-scmi-pci.c",
+        "vhost-user-scmi.c",
+        "vhost-user-scsi-pci.c",
+        "vhost-user-snd-pci.c",
+        "vhost-user-snd.c",
+        "vhost-user-spi-pci.c",
+        "vhost-user-spi.c",
+        "vhost-user-test-device-pci.c",
+        "vhost-user-test-device.c",
+        "vhost-user-vsock-pci.c",
+        "vhost-user-vsock.c",
+        "vhost-user.c",
+        "vhost-vdpa.c",
+        "vhost-vsock-common.c",
+        "vhost-vsock-pci.c",
+        "vhost-vsock.c",
+        "vhost.c",
+        "virtio-9p-pci.c",
+        "virtio-acpi.c",
+        "virtio-balloon-pci.c",
+        "virtio-balloon.c",
+        "virtio-blk-pci.c",
+        "virtio-bus.c",
+        "virtio-config-io.c",
+        "virtio-crypto-pci.c",
+        "virtio-crypto.c",
+        "virtio-hmp-cmds.c",
+        "virtio-input-host-pci.c",
+        "virtio-input-pci.c",
+        "virtio-iommu-pci.c",
+        "virtio-iommu.c",
+        "virtio-md-pci.c",
+        "virtio-mem-pci.c",
+        "virtio-mem.c",
+        "virtio-mmio.c",
+        "virtio-net-pci.c",
+        "virtio-nsm-pci.c",
+        "virtio-nsm.c",
+        "virtio-pci.c",
+        "virtio-pmem-pci.c",
+        "virtio-pmem.c",
+        "virtio-qmp.c",
+        "virtio-rng-pci.c",
+        "virtio-rng.c",
+        "virtio-scsi-pci.c",
+        "virtio-serial-pci.c",
+        "virtio.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__73",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_virtio",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

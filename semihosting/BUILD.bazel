@@ -1,0 +1,36 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "qemuutil_fg_6",
+    srcs = [
+        "arm-compat-semi-stub.c",
+        "stubs-all.c",
+        "stubs-system.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_3",
+    srcs = [
+        "arm-compat-semi.c",
+        "config.c",
+        "console.c",
+        "guestfd.c",
+        "syscalls.c",
+        "uaccess.c",
+    ],
+)
+
+filegroup(
+    name = "user_fg",
+    srcs = [
+        "guestfd.c",
+        "user.c",
+    ],
+)

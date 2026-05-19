@@ -1,0 +1,52 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_49",
+    srcs = [
+        "articia.c",
+        "aspeed_pcie.c",
+        "bonito.c",
+        "designware.c",
+        "dino.c",
+        "fsl_imx8m_phy.c",
+        "gpex-acpi.c",
+        "gpex.c",
+        "grackle.c",
+        "gt64120.c",
+        "i440fx.c",
+        "mv64361.c",
+        "pam.c",
+        "ppc440_pcix.c",
+        "ppc4xx_pci.c",
+        "ppce500.c",
+        "q35.c",
+        "raven.c",
+        "remote.c",
+        "sabre.c",
+        "sh_pci.c",
+        "uninorth.c",
+        "versatile.c",
+        "xen_igd_pt.c",
+        "xilinx-pcie.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__54",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_pci-host",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

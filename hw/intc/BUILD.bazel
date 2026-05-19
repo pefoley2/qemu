@@ -1,0 +1,79 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "arch_srcs_14",
+    srcs = [
+        "apic.c",
+        "apic_common.c",
+        "ioapic.c",
+    ],
+)
+
+filegroup(
+    name = "qemuutil_fg_16",
+    srcs = [
+        "arm_gicv3_hvf_stub.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_32",
+    srcs = [
+        "allwinner-a10-pic.c",
+        "arm_gic.c",
+        "arm_gic_common.c",
+        "arm_gicv2m.c",
+        "arm_gicv3.c",
+        "arm_gicv3_common.c",
+        "arm_gicv3_dist.c",
+        "arm_gicv3_its.c",
+        "arm_gicv3_its_common.c",
+        "arm_gicv3_redist.c",
+        "arm_gicv5.c",
+        "arm_gicv5_common.c",
+        "aspeed_intc.c",
+        "aspeed_vic.c",
+        "bcm2835_ic.c",
+        "bcm2836_control.c",
+        "exynos4210_combiner.c",
+        "exynos4210_gic.c",
+        "goldfish_pic.c",
+        "heathrow_pic.c",
+        "i8259.c",
+        "i8259_common.c",
+        "imx_avic.c",
+        "imx_gpcv2.c",
+        "intc.c",
+        "ioapic-stub.c",
+        "ioapic_common.c",
+        "kvm_irqcount.c",
+        "omap_intc.c",
+        "openpic.c",
+        "pl190.c",
+        "realview_gic.c",
+        "slavio_intctl.c",
+        "xilinx_intc.c",
+        "xlnx-pmu-iomod-intc.c",
+        "xlnx-zynqmp-ipi.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__41",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_intc",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

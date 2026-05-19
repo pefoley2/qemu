@@ -1,0 +1,44 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_66",
+    srcs = [
+        "xen-backend.c",
+        "xen-bus-helper.c",
+        "xen-bus.c",
+        "xen-host-pci-device.c",
+        "xen-hvm-common.c",
+        "xen-legacy-backend.c",
+        "xen-mapcache.c",
+        "xen-operations.c",
+        "xen-pvh-common.c",
+        "xen_devconfig.c",
+        "xen_pt.c",
+        "xen_pt_config_init.c",
+        "xen_pt_graphics.c",
+        "xen_pt_load_rom.c",
+        "xen_pt_msi.c",
+        "xen_pvdev.c",
+        "xen_stubs.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__76",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_xen",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,47 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_28",
+    srcs = [
+        "allwinner-i2c.c",
+        "arm_sbcon_i2c.c",
+        "aspeed_i2c.c",
+        "bcm2835_i2c.c",
+        "bitbang_i2c.c",
+        "core.c",
+        "exynos4210_i2c.c",
+        "i2c_mux_pca954x.c",
+        "imx_i2c.c",
+        "microbit_i2c.c",
+        "mpc_i2c.c",
+        "npcm7xx_smbus.c",
+        "omap_i2c.c",
+        "pm_smbus.c",
+        "pmbus_device.c",
+        "ppc4xx_i2c.c",
+        "smbus_eeprom.c",
+        "smbus_ich9.c",
+        "smbus_master.c",
+        "smbus_slave.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__34",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_i2c",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

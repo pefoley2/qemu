@@ -1,0 +1,399 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_genrule")
+
+meson_genrule(
+    name = "func-precache-x86_64-acpi_bits",
+    outs = [
+        "x86_64-acpi_bits.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_acpi_bits_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_acpi_bits_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-acpi_bits.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_acpi_bits.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-bad_vmstate",
+    outs = [
+        "x86_64-bad_vmstate.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_bad_vmstate_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_bad_vmstate_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-bad_vmstate.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_bad_vmstate.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-cpu_model_versions",
+    outs = [
+        "x86_64-cpu_model_versions.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_cpu_model_versions_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_cpu_model_versions_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-cpu_model_versions.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_cpu_model_versions.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-cpu_queries",
+    outs = [
+        "x86_64-cpu_queries.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_cpu_queries_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_cpu_queries_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-cpu_queries.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_cpu_queries.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-empty_cpu_model",
+    outs = [
+        "x86_64-empty_cpu_model.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/generic:test_empty_cpu_model_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/generic && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/generic:test_empty_cpu_model_py) $(GENDIR)/tests/functional/generic && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-empty_cpu_model.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/generic/test_empty_cpu_model.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-hotplug_blk",
+    outs = [
+        "x86_64-hotplug_blk.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_hotplug_blk_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_hotplug_blk_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-hotplug_blk.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_hotplug_blk.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-hotplug_cpu",
+    outs = [
+        "x86_64-hotplug_cpu.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_hotplug_cpu_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_hotplug_cpu_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-hotplug_cpu.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_hotplug_cpu.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-info_usernet",
+    outs = [
+        "x86_64-info_usernet.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/generic:test_info_usernet_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/generic && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/generic:test_info_usernet_py) $(GENDIR)/tests/functional/generic && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-info_usernet.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/generic/test_info_usernet.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-intel_iommu",
+    outs = [
+        "x86_64-intel_iommu.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_intel_iommu_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_intel_iommu_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-intel_iommu.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_intel_iommu.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-kvm_xen",
+    outs = [
+        "x86_64-kvm_xen.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_kvm_xen_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_kvm_xen_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-kvm_xen.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_kvm_xen.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-linters",
+    outs = [
+        "x86_64-linters.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/generic:test_linters_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/generic && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/generic:test_linters_py) $(GENDIR)/tests/functional/generic && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-linters.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/generic/test_linters.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-linux_initrd",
+    outs = [
+        "x86_64-linux_initrd.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_linux_initrd_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_linux_initrd_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-linux_initrd.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_linux_initrd.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-mem_addr_space",
+    outs = [
+        "x86_64-mem_addr_space.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_mem_addr_space_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_mem_addr_space_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-mem_addr_space.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_mem_addr_space.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-memlock",
+    outs = [
+        "x86_64-memlock.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_memlock_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_memlock_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-memlock.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_memlock.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-migration",
+    outs = [
+        "x86_64-migration.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_migration_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_migration_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-migration.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_migration.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-multiprocess",
+    outs = [
+        "x86_64-multiprocess.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_multiprocess_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_multiprocess_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-multiprocess.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_multiprocess.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-netdev_ethtool",
+    outs = [
+        "x86_64-netdev_ethtool.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_netdev_ethtool_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_netdev_ethtool_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-netdev_ethtool.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_netdev_ethtool.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-pc_cpu_hotplug_props",
+    outs = [
+        "x86_64-pc_cpu_hotplug_props.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_pc_cpu_hotplug_props_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_pc_cpu_hotplug_props_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-pc_cpu_hotplug_props.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_pc_cpu_hotplug_props.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-rebuild_vmfd",
+    outs = [
+        "x86_64-rebuild_vmfd.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_rebuild_vmfd_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_rebuild_vmfd_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-rebuild_vmfd.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_rebuild_vmfd.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-replay",
+    outs = [
+        "x86_64-replay.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_replay_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_replay_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-replay.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_replay.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-reverse_debug",
+    outs = [
+        "x86_64-reverse_debug.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_reverse_debug_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_reverse_debug_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-reverse_debug.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_reverse_debug.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-tuxrun",
+    outs = [
+        "x86_64-tuxrun.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_tuxrun_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_tuxrun_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-tuxrun.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_tuxrun.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-version",
+    outs = [
+        "x86_64-version.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/generic:test_version_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/generic && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/generic:test_version_py) $(GENDIR)/tests/functional/generic && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-version.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/generic/test_version.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-vfio_user_client",
+    outs = [
+        "x86_64-vfio_user_client.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_vfio_user_client_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_vfio_user_client_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-vfio_user_client.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_vfio_user_client.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-vhost_user_bridge",
+    outs = [
+        "x86_64-vhost_user_bridge.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_vhost_user_bridge_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_vhost_user_bridge_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-vhost_user_bridge.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_vhost_user_bridge.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-virtio_balloon",
+    outs = [
+        "x86_64-virtio_balloon.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_virtio_balloon_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_virtio_balloon_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-virtio_balloon.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_virtio_balloon.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-virtio_gpu",
+    outs = [
+        "x86_64-virtio_gpu.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_virtio_gpu_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_virtio_gpu_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-virtio_gpu.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_virtio_gpu.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-virtio_version",
+    outs = [
+        "x86_64-virtio_version.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/x86_64:test_virtio_version_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/x86_64 && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/x86_64:test_virtio_version_py) $(GENDIR)/tests/functional/x86_64 && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-virtio_version.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/x86_64/test_virtio_version.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-vmstate",
+    outs = [
+        "x86_64-vmstate.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/generic:test_vmstate_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/generic && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/generic:test_vmstate_py) $(GENDIR)/tests/functional/generic && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-vmstate.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/generic/test_vmstate.py",
+)
+
+meson_genrule(
+    name = "func-precache-x86_64-vnc",
+    outs = [
+        "x86_64-vnc.tstamp",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//pyvenv:pyvenv_functests_group",
+        "//tests/functional/generic:test_vnc_py",
+    ],
+    cmd = "mkdir -p $(GENDIR)/tests/functional/generic && mkdir -p $(GENDIR)/../../../../../bin && mkdir -p $(GENDIR)/pyvenv && cp $(location //tests/functional/generic:test_vnc_py) $(GENDIR)/tests/functional/generic && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //pyvenv:pyvenv_functests_group) $(GENDIR)/pyvenv && QEMU_TEST_PRECACHE=$(GENDIR)/x86_64-vnc.tstamp MESON_BUILD_ROOT=@@BUILD_DIR@@ PYTHONPATH=@@PROJECT_DIR@@/python:@@PROJECT_DIR@@/tests/functional $(GENDIR)/tests/functional/generic/test_vnc.py",
+)

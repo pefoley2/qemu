@@ -1,0 +1,62 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_56",
+    srcs = [
+        "a9gtimer.c",
+        "allwinner-a10-pit.c",
+        "arm_mptimer.c",
+        "arm_timer.c",
+        "armv7m_systick.c",
+        "aspeed_timer.c",
+        "avr_timer16.c",
+        "bcm2835_systmr.c",
+        "cadence_ttc.c",
+        "cmsdk-apb-dualtimer.c",
+        "cmsdk-apb-timer.c",
+        "digic-timer.c",
+        "exynos4210_mct.c",
+        "exynos4210_pwm.c",
+        "grlib_gptimer.c",
+        "hpet.c",
+        "i8254.c",
+        "i8254_common.c",
+        "imx_epit.c",
+        "imx_gpt.c",
+        "mips_gictimer.c",
+        "mss-timer.c",
+        "npcm7xx_timer.c",
+        "nrf51_timer.c",
+        "pxa2xx_timer.c",
+        "renesas_cmt.c",
+        "renesas_tmr.c",
+        "sh_timer.c",
+        "sifive_pwm.c",
+        "slavio_timer.c",
+        "sse-counter.c",
+        "sse-timer.c",
+        "stellaris-gptm.c",
+        "stm32f2xx_timer.c",
+        "xilinx_timer.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__66",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_timer",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

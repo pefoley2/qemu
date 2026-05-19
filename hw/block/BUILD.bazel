@@ -1,0 +1,42 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_19",
+    srcs = [
+        "block.c",
+        "cdrom.c",
+        "fdc-isa.c",
+        "fdc-sysbus.c",
+        "fdc.c",
+        "hd-geometry.c",
+        "m25p80.c",
+        "m25p80_sfdp.c",
+        "pflash_cfi01.c",
+        "pflash_cfi02.c",
+        "swim.c",
+        "vhost-user-blk.c",
+        "virtio-blk-common.c",
+        "virtio-blk.c",
+        "xen-block.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__28",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_block",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

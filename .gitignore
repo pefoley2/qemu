@@ -9,6 +9,7 @@
 .clang-format
 .gdb_history
 platform.toml
+MODULE.bazel.lock
 cscope.*
 tags
 TAGS

@@ -1,0 +1,67 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_20",
+    srcs = [
+        "avr_usart.c",
+        "bcm2835_aux.c",
+        "cadence_uart.c",
+        "cmsdk-apb-uart.c",
+        "debugcon.c",
+        "digic-uart.c",
+        "diva-gsp.c",
+        "escc.c",
+        "exynos4210_uart.c",
+        "goldfish_tty.c",
+        "grlib_apbuart.c",
+        "ibex_uart.c",
+        "imx_serial.c",
+        "ipoctal232.c",
+        "max78000_uart.c",
+        "mcf_uart.c",
+        "mchp_pfsoc_mmuart.c",
+        "nrf51_uart.c",
+        "omap_uart.c",
+        "parallel-isa.c",
+        "parallel.c",
+        "pl011.c",
+        "renesas_sci.c",
+        "riscv_htif.c",
+        "sclpconsole-lm.c",
+        "sclpconsole.c",
+        "serial-isa.c",
+        "serial-mm.c",
+        "serial-pci-multi.c",
+        "serial-pci.c",
+        "serial.c",
+        "sh_serial.c",
+        "shakti_uart.c",
+        "sifive_uart.c",
+        "stm32f2xx_usart.c",
+        "stm32l4x5_usart.c",
+        "virtio-console.c",
+        "virtio-serial-bus.c",
+        "xen_console.c",
+        "xilinx_uartlite.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__29",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_char",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,33 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_57",
+    srcs = [
+        "tpm_crb.c",
+        "tpm_ppi.c",
+        "tpm_tis_common.c",
+        "tpm_tis_i2c.c",
+        "tpm_tis_isa.c",
+        "tpm_tis_sysbus.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__67",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_tpm",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

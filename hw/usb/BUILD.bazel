@@ -1,0 +1,73 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_22",
+    srcs = [
+        "bus-stub.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_60",
+    srcs = [
+        "bus.c",
+        "chipidea.c",
+        "combined-packet.c",
+        "core.c",
+        "desc-msos.c",
+        "desc.c",
+        "dev-audio.c",
+        "dev-hid.c",
+        "dev-hub.c",
+        "dev-mtp.c",
+        "dev-network.c",
+        "dev-serial.c",
+        "dev-smartcard-reader.c",
+        "dev-storage-bot.c",
+        "dev-storage-classic.c",
+        "dev-storage.c",
+        "dev-uas.c",
+        "dev-wacom.c",
+        "hcd-dwc2.c",
+        "hcd-dwc3.c",
+        "hcd-ehci-pci.c",
+        "hcd-ehci-sysbus.c",
+        "hcd-ehci.c",
+        "hcd-ohci-pci.c",
+        "hcd-ohci-sysbus.c",
+        "hcd-ohci.c",
+        "hcd-uhci.c",
+        "hcd-xhci-nec.c",
+        "hcd-xhci-pci.c",
+        "hcd-xhci-sysbus.c",
+        "hcd-xhci.c",
+        "imx-usb-phy.c",
+        "libhw.c",
+        "pcap.c",
+        "u2f-passthru.c",
+        "u2f.c",
+        "vt82c686-uhci-pci.c",
+        "xlnx-usb-subsystem.c",
+        "xlnx-versal-usb2-ctrl-regs.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__70",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_usb",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

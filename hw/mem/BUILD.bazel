@@ -1,0 +1,41 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_17",
+    srcs = [
+        "cxl_type3_stubs.c",
+        "memory-device-stubs.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_36",
+    srcs = [
+        "cxl_type3.c",
+        "memory-device.c",
+        "npcm7xx_mc.c",
+        "nvdimm.c",
+        "pc-dimm.c",
+        "sparse-mem.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__43",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_mem",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,46 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qmp_fg",
+    srcs = [
+        "qom-qmp-cmds.c",
+    ],
+)
+
+filegroup(
+    name = "qom_fg",
+    srcs = [
+        "compat-properties.c",
+        "container.c",
+        "object.c",
+        "object_interfaces.c",
+        "qom-qobject.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_1",
+    srcs = [
+        "qom-hmp-cmds.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__3",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_qom",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

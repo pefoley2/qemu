@@ -1,0 +1,45 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "common_fg_5",
+    srcs = [
+        "alpha.c",
+        "disas-common.c",
+        "disas-host.c",
+        "disas-target.c",
+        "hexagon.c",
+        "hppa.c",
+        "m68k.c",
+        "microblaze.c",
+        "mips.c",
+        "nanomips.c",
+        "objdump.c",
+        "riscv-xlrbr.c",
+        "riscv-xthead.c",
+        "riscv-xventana.c",
+        "riscv.c",
+        "sh4.c",
+        "sparc.c",
+        "xtensa.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_74",
+    srcs = [
+        "disas-mon.c",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_disas",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

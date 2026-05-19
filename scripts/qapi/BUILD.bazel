@@ -1,0 +1,119 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "__init___py",
+    srcs = [
+        "__init__.py",
+    ],
+)
+
+filegroup(
+    name = "backend_py",
+    srcs = [
+        "backend.py",
+    ],
+)
+
+filegroup(
+    name = "commands_py",
+    srcs = [
+        "commands.py",
+    ],
+)
+
+filegroup(
+    name = "common_py",
+    srcs = [
+        "common.py",
+    ],
+)
+
+filegroup(
+    name = "error_py",
+    srcs = [
+        "error.py",
+    ],
+)
+
+filegroup(
+    name = "events_py",
+    srcs = [
+        "events.py",
+    ],
+)
+
+filegroup(
+    name = "expr_py",
+    srcs = [
+        "expr.py",
+    ],
+)
+
+filegroup(
+    name = "features_py",
+    srcs = [
+        "features.py",
+    ],
+)
+
+filegroup(
+    name = "gen_py",
+    srcs = [
+        "gen.py",
+    ],
+)
+
+filegroup(
+    name = "introspect_py",
+    srcs = [
+        "introspect.py",
+    ],
+)
+
+filegroup(
+    name = "main_py",
+    srcs = [
+        "main.py",
+    ],
+)
+
+filegroup(
+    name = "parser_py",
+    srcs = [
+        "parser.py",
+    ],
+)
+
+filegroup(
+    name = "schema_py",
+    srcs = [
+        "schema.py",
+    ],
+)
+
+filegroup(
+    name = "source_py",
+    srcs = [
+        "source.py",
+    ],
+)
+
+filegroup(
+    name = "types_py",
+    srcs = [
+        "types.py",
+    ],
+)
+
+filegroup(
+    name = "visit_py",
+    srcs = [
+        "visit.py",
+    ],
+)

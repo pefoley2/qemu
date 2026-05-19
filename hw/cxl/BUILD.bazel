@@ -1,0 +1,27 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "qemuutil_fg_14",
+    srcs = [
+        "cxl-host-stubs.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_23",
+    srcs = [
+        "cxl-cdat.c",
+        "cxl-component-utils.c",
+        "cxl-device-utils.c",
+        "cxl-events.c",
+        "cxl-host.c",
+        "cxl-mailbox-utils.c",
+        "switch-mailbox-cci.c",
+    ],
+)

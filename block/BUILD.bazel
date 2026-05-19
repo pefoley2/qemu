@@ -1,0 +1,131 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_genrule")
+
+filegroup(
+    name = "block_fg_2",
+    srcs = [
+        "accounting.c",
+        "aio_task.c",
+        "amend.c",
+        "backup.c",
+        "blkdebug.c",
+        "blklogwrites.c",
+        "blkverify.c",
+        "block-backend.c",
+        "block-copy.c",
+        "bochs.c",
+        "cloop.c",
+        "commit.c",
+        "copy-before-write.c",
+        "copy-on-read.c",
+        "create.c",
+        "crypto.c",
+        "dirty-bitmap.c",
+        "dmg.c",
+        "file-posix.c",
+        "filter-compress.c",
+        "graph-lock.c",
+        "io.c",
+        "mirror.c",
+        "nbd.c",
+        "null.c",
+        "nvme.c",
+        "parallels-ext.c",
+        "parallels.c",
+        "preallocate.c",
+        "progress_meter.c",
+        "qapi.c",
+        "qcow.c",
+        "qcow2-bitmap.c",
+        "qcow2-cache.c",
+        "qcow2-cluster.c",
+        "qcow2-refcount.c",
+        "qcow2-snapshot.c",
+        "qcow2-threads.c",
+        "qcow2.c",
+        "qed-check.c",
+        "qed-cluster.c",
+        "qed-l2-cache.c",
+        "qed-table.c",
+        "qed.c",
+        "quorum.c",
+        "raw-format.c",
+        "replication.c",
+        "reqlist.c",
+        "snapshot-access.c",
+        "snapshot.c",
+        "stream.c",
+        "throttle-groups.c",
+        "throttle.c",
+        "vdi.c",
+        "vhdx-endian.c",
+        "vhdx-log.c",
+        "vhdx.c",
+        "vmdk.c",
+        "vpc.c",
+        "vvfat.c",
+        "write-threshold.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_69",
+    srcs = [
+        "blkreplay.c",
+        "block-ram-registrar.c",
+        "qapi-system.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__9",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_genrule(
+    name = "block-gen.c",
+    outs = [
+        "block-gen.c",
+    ],
+    srcs = [
+        "//include/block:block-global-state_h",
+        "//include/block:block-io_h",
+        "//include/block:block_int-io_h",
+        "//include/block:dirty-bitmap_h",
+        "//include/system:block-backend-global-state_h",
+        "//include/system:block-backend-io_h",
+        "coroutines.h",
+    ],
+    tools = [
+        "//scripts:block-coroutine-wrapper_py_binary",
+    ],
+    cmd = "$(location //scripts:block-coroutine-wrapper_py_binary) $(location block-gen.c) $(location //include/block:block-io_h) $(location //include/block:dirty-bitmap_h) $(location //include/block:block_int-io_h) $(location //include/block:block-global-state_h) $(location //include/system:block-backend-global-state_h) $(location //include/system:block-backend-io_h) $(location coroutines.h)",
+)
+
+meson_genrule(
+    name = "module_block.h",
+    outs = [
+        "module_block.h",
+    ],
+    tools = [
+        "//scripts/modules:module_block_py_binary",
+    ],
+    export_include_dirs = [
+        "block",
+    ],
+    cmd = "$(location //scripts/modules:module_block_py_binary) $(location module_block.h)",
+)
+
+meson_cc_headers(
+    name = "inc_block",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,54 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_71",
+    srcs = [
+        "arch_init.c",
+        "async-teardown.c",
+        "balloon.c",
+        "bootdevice.c",
+        "cpu-timers.c",
+        "cpus.c",
+        "device_tree-stub.c",
+        "device_tree.c",
+        "dirtylimit.c",
+        "dma-helpers.c",
+        "exit-with-parent.c",
+        "globals.c",
+        "ioport.c",
+        "memory.c",
+        "memory_mapping.c",
+        "physmem.c",
+        "qdev-monitor.c",
+        "qtest.c",
+        "ram-block-attributes.c",
+        "rtc.c",
+        "runstate-action.c",
+        "runstate-hmp-cmds.c",
+        "runstate.c",
+        "tpm-hmp-cmds.c",
+        "tpm.c",
+        "vl.c",
+        "watchpoint.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__81",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_system",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

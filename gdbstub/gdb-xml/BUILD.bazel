@@ -1,0 +1,21 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "i386-64bit-apx_xml",
+    srcs = [
+        "i386-64bit-apx.xml",
+    ],
+)
+
+filegroup(
+    name = "i386-64bit_xml",
+    srcs = [
+        "i386-64bit.xml",
+    ],
+)

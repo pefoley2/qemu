@@ -1,0 +1,40 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "io_fg",
+    srcs = [
+        "channel-buffer.c",
+        "channel-command.c",
+        "channel-file.c",
+        "channel-null.c",
+        "channel-socket.c",
+        "channel-tls.c",
+        "channel-util.c",
+        "channel-watch.c",
+        "channel-websock.c",
+        "channel.c",
+        "dns-resolver.c",
+        "net-listener.c",
+        "task.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__11",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_io",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

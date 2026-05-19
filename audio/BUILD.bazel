@@ -1,0 +1,42 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuaudio_fg",
+    srcs = [
+        "audio-be.c",
+        "audio-mixeng-be.c",
+        "audio.c",
+        "mixeng.c",
+        "noaudio.c",
+        "ossaudio.c",
+        "wavaudio.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_4",
+    srcs = [
+        "audio-hmp-cmds.c",
+        "wavcapture.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__18",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_audio",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

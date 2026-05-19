@@ -1,0 +1,72 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_13",
+    srcs = [
+        "acpi-cpu-hotplug-stub.c",
+        "acpi-mem-hotplug-stub.c",
+        "acpi-nvdimm-stub.c",
+        "acpi-pci-hotplug-stub.c",
+        "acpi-stub.c",
+        "acpi-x86-stub.c",
+        "aml-build-stub.c",
+        "cxl-stub.c",
+        "ghes-stub.c",
+        "ghes_cper_stub.c",
+        "ipmi-stub.c",
+        "pci-bridge-stub.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_16",
+    srcs = [
+        "acpi-qmp-cmds.c",
+        "acpi_interface.c",
+        "aml-build.c",
+        "bios-linker-loader.c",
+        "core.c",
+        "cpu.c",
+        "cxl.c",
+        "erst.c",
+        "generic_event_device.c",
+        "ghes.c",
+        "ghes_cper.c",
+        "hmat.c",
+        "ich9.c",
+        "ich9_tco.c",
+        "ich9_timer.c",
+        "ipmi.c",
+        "memory_hotplug.c",
+        "nvdimm.c",
+        "pci-bridge.c",
+        "pci.c",
+        "pcihp.c",
+        "piix4.c",
+        "tpm.c",
+        "utils.c",
+        "viot.c",
+        "vmclock.c",
+        "vmgenid.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__23",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_acpi",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

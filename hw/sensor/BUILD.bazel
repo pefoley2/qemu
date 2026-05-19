@@ -1,0 +1,37 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_53",
+    srcs = [
+        "adm1266.c",
+        "adm1272.c",
+        "dps310.c",
+        "emc141x.c",
+        "isl_pmbus_vr.c",
+        "lsm303dlhc_mag.c",
+        "max31785.c",
+        "max34451.c",
+        "tmp105.c",
+        "tmp421.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__61",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_sensor",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

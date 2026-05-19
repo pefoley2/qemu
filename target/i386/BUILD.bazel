@@ -1,0 +1,41 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "arch_srcs",
+    srcs = [
+        "arch_dump.c",
+        "arch_memory_mapping.c",
+        "confidential-guest.c",
+        "cpu-apic.c",
+        "cpu-dump.c",
+        "cpu-system.c",
+        "cpu.c",
+        "gdbstub.c",
+        "helper.c",
+        "host-cpu.c",
+        "machine.c",
+        "monitor.c",
+        "sev.c",
+        "xsave_helper.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__90",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_target_i386",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,27 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "system_fg_48",
+    srcs = [
+        "cxl_downstream.c",
+        "cxl_root_port.c",
+        "cxl_upstream.c",
+        "gen_pcie_root_port.c",
+        "i82801b11.c",
+        "ioh3420.c",
+        "pci_bridge_dev.c",
+        "pci_expander_bridge.c",
+        "pci_expander_bridge_stubs.c",
+        "pcie_pci_bridge.c",
+        "pcie_root_port.c",
+        "simba.c",
+        "xio3130_downstream.c",
+        "xio3130_upstream.c",
+    ],
+)

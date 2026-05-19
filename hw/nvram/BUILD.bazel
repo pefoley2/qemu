@@ -1,0 +1,45 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_46",
+    srcs = [
+        "aspeed_otp.c",
+        "bcm2835_otp.c",
+        "chrp_nvram.c",
+        "ds1225y.c",
+        "eeprom93xx.c",
+        "eeprom_at24c.c",
+        "fw_cfg-acpi.c",
+        "fw_cfg-interface.c",
+        "fw_cfg.c",
+        "mac_nvram.c",
+        "npcm7xx_otp.c",
+        "nrf51_nvm.c",
+        "xlnx-bbram.c",
+        "xlnx-efuse-crc.c",
+        "xlnx-efuse.c",
+        "xlnx-versal-efuse-cache.c",
+        "xlnx-versal-efuse-ctrl.c",
+        "xlnx-zynqmp-efuse.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__52",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_nvram",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

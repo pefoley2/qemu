@@ -1,0 +1,42 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_cc_library")
+
+meson_cc_headers(
+    name = "inc_subprojects_libvhost-user",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+    export_include_dirs = [
+        ".",
+    ],
+)
+
+meson_cc_library(
+    name = "vhost-user",
+    srcs = [
+        "libvhost-user.c",
+    ],
+    deps = [
+        "//:qemu_c_project_args",
+        "//:qemu_common_flags",
+        "//subprojects/libvhost-user:inc_subprojects_libvhost-user",
+    ],
+)
+
+meson_cc_library(
+    name = "vhost-user-glib",
+    srcs = [
+        "libvhost-user-glib.c",
+    ],
+    deps = [
+        "//:None",
+        "//:qemu_c_project_args",
+        "//subprojects/libvhost-user:inc_subprojects_libvhost-user",
+        "//subprojects/libvhost-user:vhost-user",
+    ],
+)

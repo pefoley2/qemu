@@ -1,0 +1,42 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_15",
+    srcs = [
+        "9p-local.c",
+        "9p-posix-acl.c",
+        "9p-synth.c",
+        "9p-util-generic.c",
+        "9p-util-linux.c",
+        "9p-xattr-user.c",
+        "9p-xattr.c",
+        "9p.c",
+        "codir.c",
+        "cofile.c",
+        "cofs.c",
+        "coth.c",
+        "coxattr.c",
+        "virtio-9p-device.c",
+        "xen-9p-backend.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__22",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_9pfs",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

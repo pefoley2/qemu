@@ -1,0 +1,32 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_7",
+    srcs = [
+        "qemu-fsdev-dummy.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_6",
+    srcs = [
+        "9p-iov-marshal.c",
+        "9p-marshal.c",
+        "qemu-fsdev-opts.c",
+        "qemu-fsdev-throttle.c",
+        "qemu-fsdev.c",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_fsdev",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

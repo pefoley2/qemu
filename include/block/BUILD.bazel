@@ -1,0 +1,42 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "block-global-state_h",
+    srcs = [
+        "block-global-state.h",
+    ],
+)
+
+filegroup(
+    name = "block-io_h",
+    srcs = [
+        "block-io.h",
+    ],
+)
+
+filegroup(
+    name = "block_int-io_h",
+    srcs = [
+        "block_int-io.h",
+    ],
+)
+
+filegroup(
+    name = "dirty-bitmap_h",
+    srcs = [
+        "dirty-bitmap.h",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_include_block",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

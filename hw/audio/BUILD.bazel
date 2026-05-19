@@ -1,0 +1,49 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_18",
+    srcs = [
+        "ac97.c",
+        "adlib.c",
+        "asc.c",
+        "cs4231.c",
+        "cs4231a.c",
+        "es1370.c",
+        "fmopl.c",
+        "gus.c",
+        "gusemu_hal.c",
+        "gusemu_mixer.c",
+        "hda-codec.c",
+        "intel-hda.c",
+        "lm4549.c",
+        "marvell_88w8618.c",
+        "model.c",
+        "pcspk.c",
+        "pl041.c",
+        "sb16.c",
+        "via-ac97.c",
+        "virtio-snd-pci.c",
+        "virtio-snd.c",
+        "wm8750.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__27",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_audio",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

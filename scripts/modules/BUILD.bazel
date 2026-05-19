@@ -1,0 +1,18 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("@rules_python//python:py_binary.bzl", "py_binary")
+
+py_binary(
+    name = "module_block_py_binary",
+    main = "../scripts/modules/module_block.py",
+    srcs = [
+        "../scripts/modules/module_block.py",
+        "/usr/local/google/home/pefoley/qemu/block/../scripts/modules/module_block.py",
+    ],
+)

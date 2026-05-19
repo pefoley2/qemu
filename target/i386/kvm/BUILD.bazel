@@ -1,0 +1,34 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "arch_srcs_1",
+    srcs = [
+        "hyperv.c",
+        "kvm-cpu.c",
+        "kvm.c",
+        "tdx-quote-generator.c",
+        "tdx.c",
+        "vmsr_energy.c",
+        "xen-emu.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__91",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_target_i386_kvm",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

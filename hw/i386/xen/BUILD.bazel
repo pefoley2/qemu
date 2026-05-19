@@ -1,0 +1,32 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "arch_srcs_6",
+    srcs = [
+        "xen-hvm.c",
+        "xen-pvh.c",
+        "xen_apic.c",
+        "xen_platform.c",
+        "xen_pvdevice.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__37",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_i386_xen",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

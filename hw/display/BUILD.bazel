@@ -1,0 +1,82 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_15",
+    srcs = [
+        "acpi-vga-stub.c",
+        "ramfb-stubs.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_24",
+    srcs = [
+        "acpi-vga.c",
+        "artist.c",
+        "ati.c",
+        "ati_2d.c",
+        "ati_dbg.c",
+        "bcm2835_fb.c",
+        "bochs-display.c",
+        "cg3.c",
+        "cirrus_vga.c",
+        "cirrus_vga_isa.c",
+        "dm163.c",
+        "dpcd.c",
+        "edid-generate.c",
+        "edid-region.c",
+        "exynos4210_fimd.c",
+        "framebuffer.c",
+        "g364fb.c",
+        "i2c-ddc.c",
+        "imx6ul_lcdif.c",
+        "jazz_led.c",
+        "macfb.c",
+        "next-fb.c",
+        "omap_lcdc.c",
+        "pl110.c",
+        "ramfb-standalone.c",
+        "ramfb.c",
+        "sii9022.c",
+        "sm501.c",
+        "ssd0303.c",
+        "ssd0323.c",
+        "tcx.c",
+        "vga-isa.c",
+        "vga-mmio.c",
+        "vga-pci.c",
+        "vga.c",
+        "vhost-user-gpu-pci.c",
+        "vhost-user-gpu.c",
+        "vhost-user-vga.c",
+        "virtio-dmabuf.c",
+        "virtio-gpu-base.c",
+        "virtio-gpu-pci.c",
+        "virtio-gpu-udmabuf.c",
+        "virtio-gpu.c",
+        "virtio-vga.c",
+        "vmware_vga.c",
+        "xenfb.c",
+        "xlnx_dp.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__30",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_display",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,35 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_27",
+    srcs = [
+        "hv-balloon-our_range_memslots.c",
+        "hv-balloon-page_range_tree.c",
+        "hv-balloon-stub.c",
+        "hv-balloon.c",
+        "hyperv.c",
+        "hyperv_testdev.c",
+        "syndbg.c",
+        "vmbus.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__33",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_hyperv",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

@@ -1,0 +1,41 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_50",
+    srcs = [
+        "allwinner-rtc.c",
+        "aspeed_rtc.c",
+        "ds1338.c",
+        "exynos4210_rtc.c",
+        "goldfish_rtc.c",
+        "ls7a_rtc.c",
+        "m41t80.c",
+        "m48t59-isa.c",
+        "m48t59.c",
+        "mc146818rtc.c",
+        "pl031.c",
+        "rs5c372.c",
+        "sun4v-rtc.c",
+        "xlnx-zynqmp-rtc.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__56",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_rtc",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

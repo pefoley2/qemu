@@ -1,0 +1,55 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_77",
+    srcs = [
+        "announce.c",
+        "checksum.c",
+        "colo-compare.c",
+        "colo.c",
+        "dgram.c",
+        "dump.c",
+        "eth.c",
+        "filter-buffer.c",
+        "filter-mirror.c",
+        "filter-replay.c",
+        "filter-rewriter.c",
+        "filter.c",
+        "hub.c",
+        "l2tpv3.c",
+        "net-hmp-cmds.c",
+        "net.c",
+        "netmap.c",
+        "queue.c",
+        "socket.c",
+        "stream.c",
+        "stream_data.c",
+        "tap-linux.c",
+        "tap.c",
+        "util.c",
+        "vhost-user-stub.c",
+        "vhost-user.c",
+        "vhost-vdpa-stub.c",
+        "vhost-vdpa.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__79",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_net",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

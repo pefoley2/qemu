@@ -1,0 +1,87 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "common_fg_3",
+    srcs = [
+        "cpu-common.c",
+        "machine-smp.c",
+    ],
+)
+
+filegroup(
+    name = "hwcore_fg",
+    srcs = [
+        "bus.c",
+        "clock.c",
+        "gpio.c",
+        "irq.c",
+        "qdev-clock.c",
+        "qdev-properties.c",
+        "qdev.c",
+        "resetcontainer.c",
+        "resettable.c",
+        "vmstate-if.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_21",
+    srcs = [
+        "clock-vmstate.c",
+        "cpu-system.c",
+        "eif.c",
+        "fw-path-provider.c",
+        "generic-loader.c",
+        "guest-loader.c",
+        "hotplug.c",
+        "loader-fit.c",
+        "loader.c",
+        "machine-hmp-cmds.c",
+        "machine-qmp-cmds.c",
+        "machine.c",
+        "nmi.c",
+        "null-machine.c",
+        "numa.c",
+        "or-irq.c",
+        "platform-bus.c",
+        "ptimer.c",
+        "qdev-fw.c",
+        "qdev-hotplug.c",
+        "qdev-properties-system.c",
+        "register.c",
+        "reset.c",
+        "split-irq.c",
+        "stream.c",
+        "sysbus-fdt.c",
+        "sysbus.c",
+        "vm-change-state-handler.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__85",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+filegroup(
+    name = "user_fg_3",
+    srcs = [
+        "cpu-user.c",
+        "qdev-user.c",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_core",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

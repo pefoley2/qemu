@@ -1,0 +1,49 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "test_empty_cpu_model_py",
+    srcs = [
+        "test_empty_cpu_model.py",
+    ],
+)
+
+filegroup(
+    name = "test_info_usernet_py",
+    srcs = [
+        "test_info_usernet.py",
+    ],
+)
+
+filegroup(
+    name = "test_linters_py",
+    srcs = [
+        "test_linters.py",
+    ],
+)
+
+filegroup(
+    name = "test_version_py",
+    srcs = [
+        "test_version.py",
+    ],
+)
+
+filegroup(
+    name = "test_vmstate_py",
+    srcs = [
+        "test_vmstate.py",
+    ],
+)
+
+filegroup(
+    name = "test_vnc_py",
+    srcs = [
+        "test_vnc.py",
+    ],
+)

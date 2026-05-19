@@ -1,0 +1,23 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+filegroup(
+    name = "system_fg_34",
+    srcs = [
+        "ipmi.c",
+        "ipmi_bmc_extern.c",
+        "ipmi_bmc_sim.c",
+        "ipmi_bt.c",
+        "ipmi_kcs.c",
+        "isa_ipmi_bt.c",
+        "isa_ipmi_kcs.c",
+        "pci_ipmi_bt.c",
+        "pci_ipmi_kcs.c",
+        "smbus_ipmi.c",
+    ],
+)

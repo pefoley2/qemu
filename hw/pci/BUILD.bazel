@@ -1,0 +1,49 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "qemuutil_fg_20",
+    srcs = [
+        "pci-stub.c",
+    ],
+)
+
+filegroup(
+    name = "system_fg_47",
+    srcs = [
+        "msi.c",
+        "msix.c",
+        "pci-hmp-cmds.c",
+        "pci-qmp-cmds.c",
+        "pci.c",
+        "pci_bridge.c",
+        "pci_host.c",
+        "pcie.c",
+        "pcie_aer.c",
+        "pcie_doe.c",
+        "pcie_host.c",
+        "pcie_port.c",
+        "pcie_sriov.c",
+        "shpc.c",
+        "slotid_cap.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__53",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_pci",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

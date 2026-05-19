@@ -1,0 +1,47 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_72",
+    srcs = [
+        "confidential-guest-support.c",
+        "cryptodev-builtin.c",
+        "cryptodev-hmp-cmds.c",
+        "cryptodev-vhost-user.c",
+        "cryptodev-vhost.c",
+        "cryptodev.c",
+        "host_iommu_device.c",
+        "hostmem-epc.c",
+        "hostmem-file.c",
+        "hostmem-memfd.c",
+        "hostmem-ram.c",
+        "hostmem-shm.c",
+        "hostmem.c",
+        "iommufd.c",
+        "rng-builtin.c",
+        "rng-egd.c",
+        "rng-random.c",
+        "rng.c",
+        "spdm-socket.c",
+        "vhost-user.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__19",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_backends",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

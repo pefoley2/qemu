@@ -1,0 +1,53 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_genrule")
+
+meson_genrule(
+    name = "QEMU man pages",
+    outs = [
+        "qemu-block-drivers.7",
+        "qemu-cpu-models.7",
+        "qemu-ga-ref.7",
+        "qemu-ga.8",
+        "qemu-img.1",
+        "qemu-nbd.8",
+        "qemu-pr-helper.8",
+        "qemu-qmp-ref.7",
+        "qemu-storage-daemon-qmp-ref.7",
+        "qemu-storage-daemon.1",
+        "qemu-trace-stap.1",
+        "qemu-vnc.1",
+        "qemu.1",
+    ],
+    srcs = [
+        "//../../../../../bin:env_",
+        "//../../../../../bin:sphinx-build_",
+    ],
+    tools = [
+        "//:/usr/bin/sphinx-build",
+        "//:env",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:env_) $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:sphinx-build_) $(GENDIR)/../../../../../bin && $(location //:env) CONFDIR=etc/qemu $(location //:/usr/bin/sphinx-build) -q -j auto -Dversion=11.0.50 -Drelease= -b man -d $(GENDIR)/manual.p $(GENDIR)/docs $(GENDIR)",
+)
+
+meson_genrule(
+    name = "QEMU manual",
+    outs = [
+        "docs.stamp",
+    ],
+    srcs = [
+        "//../../../../../bin:env_",
+        "//../../../../../bin:sphinx-build_",
+    ],
+    tools = [
+        "//:/usr/bin/sphinx-build",
+        "//:env",
+    ],
+    cmd = "mkdir -p $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:env_) $(GENDIR)/../../../../../bin && cp $(location //../../../../../bin:sphinx-build_) $(GENDIR)/../../../../../bin && $(location //:env) CONFDIR=etc/qemu $(location //:/usr/bin/sphinx-build) -q -j auto -Dversion=11.0.50 -Drelease= -Ddepfile=docs.d -Ddepfile_stamp=$(location docs.stamp) -b html -d $(GENDIR)/manual.p $(GENDIR)/docs $(GENDIR)/manual",
+)

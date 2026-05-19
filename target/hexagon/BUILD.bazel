@@ -1,0 +1,463 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers", "meson_genrule")
+load("@rules_python//python:py_binary.bzl", "py_binary")
+
+filegroup(
+    name = "gen_tcg_h",
+    srcs = [
+        "gen_tcg.h",
+    ],
+)
+
+filegroup(
+    name = "gen_tcg_hvx_h",
+    srcs = [
+        "gen_tcg_hvx.h",
+    ],
+)
+
+py_binary(
+    name = "gen_analyze_funcs_py_binary",
+    main = "gen_analyze_funcs.py",
+    srcs = [
+        "gen_analyze_funcs.py",
+    ],
+)
+
+py_binary(
+    name = "gen_decodetree_py_binary",
+    main = "gen_decodetree.py",
+    srcs = [
+        "gen_decodetree.py",
+    ],
+)
+
+py_binary(
+    name = "gen_helper_funcs_py_binary",
+    main = "gen_helper_funcs.py",
+    srcs = [
+        "gen_helper_funcs.py",
+    ],
+)
+
+py_binary(
+    name = "gen_helper_protos_py_binary",
+    main = "gen_helper_protos.py",
+    srcs = [
+        "gen_helper_protos.py",
+    ],
+)
+
+py_binary(
+    name = "gen_op_attribs_py_binary",
+    main = "gen_op_attribs.py",
+    srcs = [
+        "gen_op_attribs.py",
+    ],
+)
+
+py_binary(
+    name = "gen_opcodes_def_py_binary",
+    main = "gen_opcodes_def.py",
+    srcs = [
+        "gen_opcodes_def.py",
+    ],
+)
+
+py_binary(
+    name = "gen_printinsn_py_binary",
+    main = "gen_printinsn.py",
+    srcs = [
+        "gen_printinsn.py",
+    ],
+)
+
+py_binary(
+    name = "gen_tcg_funcs_py_binary",
+    main = "gen_tcg_funcs.py",
+    srcs = [
+        "gen_tcg_funcs.py",
+    ],
+)
+
+py_binary(
+    name = "gen_trans_funcs_py_binary",
+    main = "gen_trans_funcs.py",
+    srcs = [
+        "gen_trans_funcs.py",
+    ],
+)
+
+meson_genrule(
+    name = "analyze_funcs_generated.c.inc",
+    outs = [
+        "analyze_funcs_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:gen_tcg_h",
+        "//target/hexagon:gen_tcg_hvx_h",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_analyze_funcs_py_binary",
+    ],
+    cmd = "mkdir -p $(GENDIR)/target/hexagon && mkdir -p $(GENDIR)/../../../../../bin && cp $(location hex_common.py) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_h) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_hvx_h) $(GENDIR)/target/hexagon && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //target/hexagon:semantics_generated.pyinc) $(GENDIR)/target/hexagon && $(location //target/hexagon:gen_analyze_funcs_py_binary) $(GENDIR)/target/hexagon/gen_tcg.h $(GENDIR)/target/hexagon/gen_tcg_hvx.h $(location analyze_funcs_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_hvx_generated.c.inc",
+    outs = [
+        "decode_hvx_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_hvx -o $(location decode_hvx_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_normal_generated.c.inc",
+    outs = [
+        "decode_normal_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_normal -o $(location decode_normal_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_subinsn_a_generated.c.inc",
+    outs = [
+        "decode_subinsn_a_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_subinsn_a --insnwidth=16 -o $(location decode_subinsn_a_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_subinsn_l1_generated.c.inc",
+    outs = [
+        "decode_subinsn_l1_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_subinsn_l1 --insnwidth=16 -o $(location decode_subinsn_l1_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_subinsn_l2_generated.c.inc",
+    outs = [
+        "decode_subinsn_l2_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_subinsn_l2 --insnwidth=16 -o $(location decode_subinsn_l2_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_subinsn_s1_generated.c.inc",
+    outs = [
+        "decode_subinsn_s1_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_subinsn_s1 --insnwidth=16 -o $(location decode_subinsn_s1_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decode_subinsn_s2_generated.c.inc",
+    outs = [
+        "decode_subinsn_s2_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+    ],
+    tools = [
+        "//scripts:decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //scripts:decodetree_py_binary) --static-decode=decode_subinsn_s2 --insnwidth=16 -o $(location decode_subinsn_s2_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "decodetree_trans_funcs_generated.c.inc",
+    outs = [
+        "decodetree_trans_funcs_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_trans_funcs_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_trans_funcs_py_binary) $(location decodetree_trans_funcs_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "helper_funcs_generated.c.inc",
+    outs = [
+        "helper_funcs_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:gen_tcg_h",
+        "//target/hexagon:gen_tcg_hvx_h",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_helper_funcs_py_binary",
+    ],
+    cmd = "mkdir -p $(GENDIR)/target/hexagon && mkdir -p $(GENDIR)/../../../../../bin && cp $(location hex_common.py) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_h) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_hvx_h) $(GENDIR)/target/hexagon && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //target/hexagon:semantics_generated.pyinc) $(GENDIR)/target/hexagon && $(location //target/hexagon:gen_helper_funcs_py_binary) $(GENDIR)/target/hexagon/gen_tcg.h $(GENDIR)/target/hexagon/gen_tcg_hvx.h $(location helper_funcs_generated.c.inc)",
+)
+
+meson_genrule(
+    name = "helper_protos_generated.h.inc",
+    outs = [
+        "helper_protos_generated.h.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:gen_tcg_h",
+        "//target/hexagon:gen_tcg_hvx_h",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_helper_protos_py_binary",
+    ],
+    cmd = "mkdir -p $(GENDIR)/target/hexagon && mkdir -p $(GENDIR)/../../../../../bin && cp $(location hex_common.py) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_h) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_hvx_h) $(GENDIR)/target/hexagon && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //target/hexagon:semantics_generated.pyinc) $(GENDIR)/target/hexagon && $(location //target/hexagon:gen_helper_protos_py_binary) $(GENDIR)/target/hexagon/gen_tcg.h $(GENDIR)/target/hexagon/gen_tcg_hvx.h $(location helper_protos_generated.h.inc)",
+)
+
+meson_genrule(
+    name = "hvx_decode_generated",
+    outs = [
+        "hvx_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) EXT_mmvec $(location hvx_decode_generated)",
+)
+
+meson_genrule(
+    name = "iset.py",
+    outs = [
+        "iset.py",
+    ],
+    cmd = "$(location iset.py)",
+)
+
+meson_genrule(
+    name = "normal_decode_generated",
+    outs = [
+        "normal_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) NORMAL $(location normal_decode_generated)",
+)
+
+meson_genrule(
+    name = "op_attribs_generated.h.inc",
+    outs = [
+        "op_attribs_generated.h.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_op_attribs_py_binary",
+    ],
+    cmd = "$(location //target/hexagon:gen_op_attribs_py_binary) $(location op_attribs_generated.h.inc)",
+)
+
+meson_genrule(
+    name = "opcodes_def_generated.h.inc",
+    outs = [
+        "opcodes_def_generated.h.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_opcodes_def_py_binary",
+    ],
+    cmd = "$(location //target/hexagon:gen_opcodes_def_py_binary) $(location opcodes_def_generated.h.inc)",
+)
+
+meson_genrule(
+    name = "printinsn_generated.h.inc",
+    outs = [
+        "printinsn_generated.h.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_printinsn_py_binary",
+    ],
+    cmd = "$(location //target/hexagon:gen_printinsn_py_binary) $(location printinsn_generated.h.inc)",
+)
+
+meson_genrule(
+    name = "semantics_generated.pyinc",
+    outs = [
+        "semantics_generated.pyinc",
+    ],
+    cmd = "$(location semantics_generated.pyinc)",
+)
+
+meson_genrule(
+    name = "subinsn_a_decode_generated",
+    outs = [
+        "subinsn_a_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) SUBINSN_A $(location subinsn_a_decode_generated)",
+)
+
+meson_genrule(
+    name = "subinsn_l1_decode_generated",
+    outs = [
+        "subinsn_l1_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) SUBINSN_L1 $(location subinsn_l1_decode_generated)",
+)
+
+meson_genrule(
+    name = "subinsn_l2_decode_generated",
+    outs = [
+        "subinsn_l2_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) SUBINSN_L2 $(location subinsn_l2_decode_generated)",
+)
+
+meson_genrule(
+    name = "subinsn_s1_decode_generated",
+    outs = [
+        "subinsn_s1_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) SUBINSN_S1 $(location subinsn_s1_decode_generated)",
+)
+
+meson_genrule(
+    name = "subinsn_s2_decode_generated",
+    outs = [
+        "subinsn_s2_decode_generated",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:iset.py",
+        "//target/hexagon:semantics_generated.pyinc",
+    ],
+    tools = [
+        "//target/hexagon:gen_decodetree_py_binary",
+    ],
+    cmd = "PYTHONPATH=$(GENDIR) $(location //target/hexagon:gen_decodetree_py_binary) SUBINSN_S2 $(location subinsn_s2_decode_generated)",
+)
+
+meson_genrule(
+    name = "tcg_funcs_generated.c.inc",
+    outs = [
+        "tcg_funcs_generated.c.inc",
+    ],
+    srcs = [
+        "//../../../../../bin:python3_",
+        "//target/hexagon:gen_tcg_h",
+        "//target/hexagon:gen_tcg_hvx_h",
+        "//target/hexagon:semantics_generated.pyinc",
+        "hex_common.py",
+    ],
+    tools = [
+        "//target/hexagon:gen_tcg_funcs_py_binary",
+    ],
+    cmd = "mkdir -p $(GENDIR)/target/hexagon && mkdir -p $(GENDIR)/../../../../../bin && cp $(location hex_common.py) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_h) $(GENDIR)/target/hexagon && cp $(location //target/hexagon:gen_tcg_hvx_h) $(GENDIR)/target/hexagon && cp $(location //../../../../../bin:python3_) $(GENDIR)/../../../../../bin && cp $(location //target/hexagon:semantics_generated.pyinc) $(GENDIR)/target/hexagon && $(location //target/hexagon:gen_tcg_funcs_py_binary) $(GENDIR)/target/hexagon/gen_tcg.h $(GENDIR)/target/hexagon/gen_tcg_hvx.h $(location tcg_funcs_generated.c.inc)",
+)
+
+meson_cc_headers(
+    name = "inc_target_hexagon",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)

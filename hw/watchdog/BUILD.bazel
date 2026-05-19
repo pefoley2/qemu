@@ -1,0 +1,36 @@
+# Copyright (C) 2025-2026 The Magma GPU Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# Generated via:
+#   https://github.com/mesonbuild/meson/tree/master/mesonbuild/convert
+#
+# Submit patches, do not hand-edit.
+
+load("//bazel:meson_rules.bzl", "meson_cc_headers")
+
+filegroup(
+    name = "system_fg_65",
+    srcs = [
+        "allwinner-wdt.c",
+        "cmsdk-apb-watchdog.c",
+        "sbsa_gwdt.c",
+        "watchdog.c",
+        "wdt_aspeed.c",
+        "wdt_diag288.c",
+        "wdt_i6300esb.c",
+        "wdt_ib700.c",
+        "wdt_imx2.c",
+    ],
+)
+
+filegroup(
+    name = "trace-events__75",
+    srcs = [
+        "trace-events",
+    ],
+)
+
+meson_cc_headers(
+    name = "inc_hw_watchdog",
+    hdrs = glob(["**/*.h", "**/*.hpp", "**/*.inl", "**/*.inc"], allow_empty = True),
+)
