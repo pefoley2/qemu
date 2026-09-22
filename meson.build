@@ -134,10 +134,16 @@ if have_rust
 
   rustfmt = find_program('rustfmt', required: false)
 
-  rustc_lint_args = get_option('strict_rust_lints') ?  ['-Dwarnings', '-Funknown_lints'] : []
-  add_project_arguments(rustc_lint_args + ['--cfg', 'MESON'],
+  rustc_options = ['--cfg', 'MESON']
+  if get_option('strict_rust_lints')
+    rustc_options += ['-Dwarnings', '-Funknown_lints']
+  endif
+  if get_option('debug')
+    rustc_options += ['-C', 'overflow-checks=yes']
+  endif
+  add_project_arguments(rustc_options,
       native: false, language: 'rust')
-  add_project_arguments(rustc_lint_args + ['--cfg', 'MESON'],
+  add_project_arguments(rustc_options,
       native: true, language: 'rust')
 endif
 
